@@ -177,14 +177,13 @@ export function Hero() {
               Next Generation Technology
             </h1>
             <p className="mt-6 text-lg text-gray-600">
-              We have listened to our customers and have developed a new
-              generation of technology to help you to boost your productivity
-              and profits.{" "}
+              We have listened to you all... <br />
               <span className="font-semibold text-gray-900">
                 {" "}
                 Automatic onsite wait-time recording at shipper and consingnee.{" "}
               </span>{" "}
-              In full realtime mode.{" "}
+              In full realtime mode. Next generation technology to help you
+              boost productivity and profits.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <Button>
