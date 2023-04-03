@@ -2,14 +2,13 @@
   "$schema": "https://turborepo.org/schema.json",
   "globalDependencies": ["**/.env"],
   "pipeline": {
-
     "dev": {
       "persistent": true,
       "cache": false
     },
     "build": {
-      "dependsOn": ["^build", "^db:generate"],
-      "outputs": [".next/**", ".expo/**"]
+      "dependsOn": ["^build"],
+      "outputs": [".next/**"]
     },
     "lint": {},
     "lint:fix": {},
@@ -20,14 +19,8 @@
       "cache": false
     },
     "type-check": {
-      "dependsOn": ["^db:generate"],
       "cache": false
     }
   },
-  "globalEnv": [
-    "CI",
-    "NODE_ENV",
-    "VERCEL",
-    "VERCEL_URL"
-  ]
+  "globalEnv": ["CI", "NODE_ENV", "VERCEL", "VERCEL_URL"]
 }
