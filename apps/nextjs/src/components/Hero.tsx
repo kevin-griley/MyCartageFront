@@ -130,7 +130,7 @@ const AppDemo: FC = () => {
                 </div>
               </div>
               <div className="flex justify-between py-1">
-                <div className="text-gray-500">Efficiancy</div>
+                <div className="text-gray-500">Efficiency</div>
                 <div className="font-medium text-gray-900">
                   <ArrowUpIcon className="inline h-4 w-4 text-teal-500" />
                   <ArrowUpIcon className="inline h-4 w-4 text-teal-500" />
@@ -147,7 +147,7 @@ const AppDemo: FC = () => {
                 </div>
               </div>
               <div className="flex justify-between py-1">
-                <div className="text-gray-500">Happieness</div>
+                <div className="text-gray-500">Happiness</div>
                 <div className="font-medium text-gray-900">
                   <ArrowUpIcon className="inline h-4 w-4 text-teal-500" />
                   <ArrowUpIcon className="inline h-4 w-4 text-teal-500" />
