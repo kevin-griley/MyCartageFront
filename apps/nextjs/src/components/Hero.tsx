@@ -116,7 +116,7 @@ const AppDemo: FC = () => {
               className="rounded-lg"
             />
             <div className="mt-4 rounded-lg bg-cyan-500 px-4 py-2 text-center text-sm font-semibold text-white">
-              LETS BOOST AHEAD
+              LET&apos;S BOOST AHEAD
             </div>
             <div className="mt-3 divide-y divide-gray-100 text-sm">
               <div className="flex justify-between py-1">
