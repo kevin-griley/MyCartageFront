@@ -1,6 +1,6 @@
 import { useId, type FC } from "react";
 import Image from "next/image";
-import { ArrowUpIcon } from "@heroicons/react/20/solid";
+import { ArrowUpIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
 import { AppScreen } from "~/components/AppScreen";
 import { Button } from "~/components/Button";
@@ -94,8 +94,8 @@ const AppDemo: FC = () => {
       <AppScreen.Body>
         <div className="p-4">
           <div className="flex gap-2">
-            <div className="text-xs leading-6 text-gray-500">
-              MyCartage, TMS - GPS Solutions
+            <div className="text-xs font-semibold leading-6 text-gray-600">
+              MyCartage - GPS Tracking Solutions
             </div>
             <svg viewBox="0 0 24 24" className="ml-auto h-6 w-6" fill="none">
               <path
@@ -177,13 +177,24 @@ export function Hero() {
               Next Generation Technology
             </h1>
             <p className="mt-6 text-lg text-gray-600">
-              By leveraging insights from our network of industry insiders,
-              you’ll know exactly when to buy to maximize profit, and exactly
-              when to sell to avoid painful losses.
+              We have listened to our customers and have developed a new
+              generation of technology to help you to boost your productivity
+              and profits.{" "}
+              <span className="font-semibold text-gray-900">
+                {" "}
+                Automatic onsite wait-time recording at shipper and consingnee.{" "}
+              </span>{" "}
+              In full realtime mode.{" "}
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              <Button>Get Started</Button>
-              <Button variant="ghost">Our Technology</Button>
+              <Button>
+                Get Started
+                <ChevronRightIcon className="ml-2 inline h-5 w-5" />
+              </Button>
+              <Button variant="ghost">
+                Our Technology
+                <ChevronRightIcon className="ml-2 inline h-5 w-5" />
+              </Button>
             </div>
           </div>
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
