@@ -95,7 +95,7 @@ export default function Header() {
             <span className="sr-only">MyCartage</span>
             <Image
               src={MyCartageLogo}
-              alt="MyCartage"
+              alt="MyCartage-Logo"
               height={45}
               width={240}
             />
@@ -243,8 +243,8 @@ export default function Header() {
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <Image
-                  src="/MyCartage-logo.png"
-                  alt=""
+                  src={MyCartageLogo}
+                  alt="MyCartage-Logo"
                   height={45}
                   width={240}
                 />
