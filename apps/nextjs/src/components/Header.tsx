@@ -16,6 +16,8 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 
+import MyCartageLogo from "~/images/logos/MyCartage-logo.png";
+
 const products = [
   {
     name: "Analytics",
@@ -91,7 +93,12 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">MyCartage</span>
-            <Image src="/MyCartage-logo.png" alt="" height={45} width={240} />
+            <Image
+              src={MyCartageLogo}
+              alt="MyCartage"
+              height={45}
+              width={240}
+            />
           </a>
         </div>
 
