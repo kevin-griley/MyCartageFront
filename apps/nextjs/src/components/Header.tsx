@@ -225,7 +225,10 @@ export default function Header() {
         </Popover.Group>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a
+            href="https://app.mycartage.com"
+            className="inline-flex h-10 items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 "
+          >
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -303,7 +306,7 @@ export default function Header() {
                 </div>
                 <div className="py-6">
                   <a
-                    href="#"
+                    href="https://app.mycartage.com"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Log in
