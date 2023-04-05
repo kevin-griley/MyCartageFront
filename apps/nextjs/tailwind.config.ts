@@ -10,7 +10,9 @@ export default {
     extend: {
       animation: {
         "spin-slow": "spin 3s linear infinite",
-        "spin-reverse-slow": "spin-reverse 3s linear infinite",
+        "spin-slower": "spin 4s linear infinite",
+        "spin-reverse-slow": "spin-reverse 5s linear infinite",
+        "spin-reverse-slower": "spin-reverse 6s linear infinite",
       },
 
       keyframes: {
