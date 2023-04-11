@@ -68,14 +68,14 @@ const company = [
       "Looking for you next career opportunity? See all of our open positions",
   },
   {
-    name: "Support",
-    href: "#",
+    name: "Documentation",
+    href: "/docs",
     description:
-      "Get in touch with our dedicated support team or reach out on our community forums",
+      "Get help with all of our products and services, including our API",
   },
   {
     name: "Blog",
-    href: "#",
+    href: "/blog",
     description:
       "Read our latest announcements and get perspectives from our team",
   },

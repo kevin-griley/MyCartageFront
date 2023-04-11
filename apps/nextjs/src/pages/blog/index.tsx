@@ -28,8 +28,8 @@ export default function BlogPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-      <main>
+      <main className="flex min-h-screen flex-col">
+        <Header />
         <Container>
           <div className="container max-w-4xl py-6 lg:py-10">
             <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
