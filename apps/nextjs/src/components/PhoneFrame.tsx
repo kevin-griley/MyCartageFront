@@ -38,6 +38,7 @@ export const PhoneFrame: FC<PhoneFrameProps> = ({
       </div>
       <PlaceholderFrame className="pointer-events-none absolute inset-0 h-full w-full fill-gray-100" />
       <Image
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         src={frame}
         alt=""
         className="pointer-events-none absolute inset-0 h-full w-full"

@@ -38,6 +38,7 @@ importers:
       class-variance-authority: ^0.5.1
       clsx: ^1.2.1
       contentlayer: ^0.3.1
+      date-fns: ^2.29.3
       dotenv-cli: ^7.1.0
       eslint: ^8.37.0
       focus-visible: ^5.2.0
@@ -73,6 +74,7 @@ importers:
       class-variance-authority: 0.5.1_typescript@5.0.3
       clsx: 1.2.1
       contentlayer: 0.3.1
+      date-fns: 2.29.3
       focus-visible: 5.2.0
       framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
       lucide-react: 0.129.0_react@18.2.0
@@ -2282,6 +2284,11 @@ packages:
   /data-uri-to-buffer/4.0.1:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
+    dev: false
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
     dev: false
 
   /debug/3.2.7:

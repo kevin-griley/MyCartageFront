@@ -22,5 +22,5 @@
       "cache": false
     }
   },
-  "globalEnv": ["CI", "NODE_ENV", "VERCEL", "VERCEL_URL"]
+  "globalEnv": ["CI", "NODE_ENV", "VERCEL", "VERCEL_URL", "NEXT_PUBLIC_APP_URL"]
 }

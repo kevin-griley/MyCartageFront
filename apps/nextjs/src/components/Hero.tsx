@@ -1,5 +1,5 @@
 import { useId, type FC } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { ArrowUpIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
 import { AppScreen } from "~/components/AppScreen";
@@ -226,6 +226,31 @@ const AppDemo: FC = () => {
 };
 
 export function Hero() {
+  interface Logo {
+    name: string;
+    logo: StaticImageData;
+    height: number;
+  }
+
+  const logos: Logo[] = [
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    { name: "Expeditors", logo: expeditors_logo, height: 35 },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    { name: "Kuehne & Nagel", logo: kuehne_nagel_logo, height: 35 },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    { name: "Ceva", logo: ceva_logo, height: 25 },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    { name: "Flexport", logo: flexport_logo, height: 35 },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    { name: "DSV", logo: dsv_logo, height: 27 },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    { name: "Lynden", logo: lynden_logo, height: 30 },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    { name: "Fedex", logo: fedex_logo, height: 30 },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    { name: "DHL", logo: dhl_logo, height: 25 },
+  ];
+
   return (
     <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">
       <Container>
@@ -276,16 +301,7 @@ export function Hero() {
               role="list"
               className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-10 gap-y-8 lg:mx-0 lg:justify-start"
             >
-              {[
-                ["Expeditors", expeditors_logo, 35],
-                ["Kuehne & Nagel", kuehne_nagel_logo, 35],
-                ["Ceva", ceva_logo, 25],
-                ["Flexport", flexport_logo, 35],
-                ["DSV", dsv_logo, 27],
-                ["Lynden", lynden_logo, 30],
-                ["Fedex", fedex_logo, 30],
-                ["DHL", dhl_logo, 25],
-              ].map(([name, logo, height]) => (
+              {logos.map(({ name, logo, height }) => (
                 <li key={name}>
                   <Image src={logo} alt={name} height={height} />
                 </li>
