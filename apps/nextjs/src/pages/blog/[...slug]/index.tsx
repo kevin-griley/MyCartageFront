@@ -34,8 +34,8 @@ export const getStaticProps: GetStaticProps<{
   post: Post;
   authors: (Author | undefined)[];
 }> = (context) => {
-  const slug = String(context.params?.slug);
-  const post = allPosts.find((post) => post.slugAsParams === slug);
+  const slug = context.params?.slug as string[];
+  const post = allPosts.find((post) => post.slugAsParams === slug.join("/"));
   if (!post) {
     notFound();
   }
