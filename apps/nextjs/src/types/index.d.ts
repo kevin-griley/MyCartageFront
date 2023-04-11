@@ -6,8 +6,6 @@ export type NavItem = {
   disabled?: boolean;
 };
 
-export type MainNavItem = NavItem;
-
 export type SidebarNavItem = {
   title: string;
   disabled?: boolean;
@@ -25,6 +23,5 @@ export type SidebarNavItem = {
 );
 
 export type DocsConfig = {
-  mainNav: MainNavItem[];
   sidebarNav: SidebarNavItem[];
 };

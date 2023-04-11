@@ -1,16 +1,6 @@
 import { type DocsConfig } from "~/types";
 
 export const docsConfig: DocsConfig = {
-  mainNav: [
-    {
-      title: "Documentation",
-      href: "/docs",
-    },
-    {
-      title: "Guides",
-      href: "/guides",
-    },
-  ],
   sidebarNav: [
     {
       title: "Getting Started",
@@ -22,113 +12,112 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Documentation",
+      title: "Basics",
       items: [
         {
           title: "Introduction",
-          href: "/docs/documentation",
+          href: "/docs/documentation/basics",
         },
         {
-          title: "Contentlayer",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Migrating your TMS",
+          href: "/docs/documentation/migrating-your-tms",
         },
         {
-          title: "Components",
-          href: "/docs/documentation/components",
+          title: "Customer Portals",
+          href: "/docs/documentation/customer-portals",
         },
         {
-          title: "Code Blocks",
-          href: "/docs/documentation/code-blocks",
+          title: "Data Protection",
+          href: "/docs/documentation/data-protection",
         },
         {
-          title: "Style Guide",
-          href: "/docs/documentation/style-guide",
+          title: "API Integration",
+          href: "/docs/documentation/api-integration",
         },
         {
-          title: "Search",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Webhooks",
+          href: "/docs/documentation/webhooks",
         },
       ],
     },
     {
-      title: "Blog",
+      title: "Accounts",
       items: [
         {
           title: "Introduction",
-          href: "/docs/in-progress",
-          disabled: true,
+          href: "/docs/documentation/accounts",
         },
         {
-          title: "Build your own",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Writing Posts",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Updating your account",
+          href: "/docs/documentation/updating-your-account",
         },
       ],
     },
     {
-      title: "Dashboard",
+      title: "Businesses",
       items: [
         {
           title: "Introduction",
-          href: "/docs/in-progress",
-          disabled: true,
+          href: "/docs/documentation/businesses",
         },
         {
-          title: "Layouts",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Creating a business",
+          href: "/docs/documentation/creating-a-business",
         },
         {
-          title: "Server Components",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Joining a business",
+          href: "/docs/documentation/joining-a-business",
         },
         {
-          title: "Authentication",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Database with Prisma",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "API Routes",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Modify a subscription",
+          href: "/docs/documentation/modify-a-subscription",
         },
       ],
     },
     {
-      title: "Marketing Site",
+      title: "Business Users",
       items: [
         {
           title: "Introduction",
-          href: "/docs/in-progress",
-          disabled: true,
+          href: "/docs/documentation/business-users",
         },
         {
-          title: "File Structure",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Inviting a user",
+          href: "/docs/documentation/inviting-a-user",
         },
         {
-          title: "Tailwind CSS",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Setting user roles",
+          href: "/docs/documentation/setting-user-roles",
         },
         {
-          title: "Typography",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Giving customer access",
+          href: "/docs/documentation/giving-customer-access",
+        },
+      ],
+    },
+    {
+      title: "Departments",
+      items: [
+        {
+          title: "Introduction",
+          href: "/docs/documentation/departments",
+        },
+        {
+          title: "Creating a department",
+          href: "/docs/documentation/creating-a-department",
+        },
+      ],
+    },
+    {
+      title: "Motor Carriers",
+      items: [
+        {
+          title: "Introduction",
+          href: "/docs/documentation/motor-carriers",
+        },
+        {
+          title: "Adding a carrier",
+          href: "/docs/documentation/adding-a-carrier",
         },
       ],
     },

@@ -62,12 +62,6 @@ const company = [
       "Learn more about our company values and mission to empower others",
   },
   {
-    name: "Careers",
-    href: "#",
-    description:
-      "Looking for you next career opportunity? See all of our open positions",
-  },
-  {
     name: "Documentation",
     href: "/docs",
     description:
