@@ -16,6 +16,7 @@ import { DocsSidebarNav } from "~/components/sidebar-nav";
 import { DashboardTableOfContents } from "~/components/toc";
 import { docsConfig } from "~/config/docs";
 import { getTableOfContents, type Items } from "~/lib/toc";
+import { absoluteUrl } from "~/lib/utils";
 
 export function getStaticPaths() {
   const paths = allDocs.map((doc) => ({
@@ -58,8 +59,17 @@ const DocsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <>
       <Head>
-        <title>MyCartage</title>
-        <meta name="description" content="Airfreight TMS with Gps Tracking" />
+        <title>{`${doc.title}`} | TMS Docs</title>
+        <meta name="description" content={doc.description} />
+        <meta property="og:title" content={`${doc.title} | TMS Docs`} />
+        <meta property="og:description" content={doc.description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={absoluteUrl(doc.slug)} />
+        <meta
+          property="og:image"
+          content={absoluteUrl("/images/MyCartage-large.png")}
+        />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
