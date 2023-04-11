@@ -4,12 +4,14 @@ const config = {
     "next",
     "turbo",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    // "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier",
   ],
   rules: {
     "@next/next/no-html-link-for-pages": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {

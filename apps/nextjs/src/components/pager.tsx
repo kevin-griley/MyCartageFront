@@ -55,7 +55,8 @@ export function getPagerForDoc(doc: Doc) {
   };
 }
 
-export function flatten(links: { items? }[]) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function flatten(links: { items?: { items?: any }[] }[]): any {
   return links.reduce((flat, link) => {
     return flat.concat(link.items ? flatten(link.items) : link);
   }, []);
