@@ -90,7 +90,7 @@ const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
         viewBox="0 0 1026 1026"
         fill="none"
         aria-hidden="true"
-        className="animate-spin-reverse-slow absolute inset-0 h-full w-full p-10"
+        className="animate-spin-reverse-slow absolute inset-0 hidden h-full w-full p-10 sm:block"
       >
         <path
           d="M913 513c0 220.914-179.086 400-400 400S113 733.914 113 513s179.086-400 400-400 400 179.086 400 400Z"
@@ -121,7 +121,7 @@ const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
         viewBox="0 0 1026 1026"
         fill="none"
         aria-hidden="true"
-        className="animate-spin-reverse-slower absolute inset-0 h-full w-full p-32"
+        className="animate-spin-reverse-slower absolute inset-0 hidden h-full w-full p-32 lg:block"
       >
         <path
           d="M913 513c0 220.914-179.086 400-400 400S113 733.914 113 513s179.086-400 400-400 400 179.086 400 400Z"
