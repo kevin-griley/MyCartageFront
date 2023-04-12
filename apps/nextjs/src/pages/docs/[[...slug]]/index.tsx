@@ -59,7 +59,7 @@ const DocsPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <>
       <Head>
-        <title>{`${doc.title}`} | TMS Docs</title>
+        <title>{`${doc.title}  | TMS Docs`}</title>
         <meta name="description" content={doc.description} />
         <meta property="og:title" content={`${doc.title} | TMS Docs`} />
         <meta property="og:description" content={doc.description} />

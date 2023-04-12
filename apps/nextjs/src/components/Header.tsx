@@ -57,7 +57,7 @@ const callsToAction = [
 const company = [
   {
     name: "About us",
-    href: "#",
+    href: "/about",
     description:
       "Learn more about our company values and mission to empower others",
   },
