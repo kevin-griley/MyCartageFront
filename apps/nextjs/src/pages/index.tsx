@@ -5,6 +5,7 @@ import Header from "~/components/Header";
 import { Hero } from "~/components/Hero";
 import { Pricing } from "~/components/Pricing";
 import { PrimaryFeatures } from "~/components/PrimaryFeatures";
+import { SecondaryFeatures } from "~/components/SecondaryFeatures";
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       <main>
         <Hero />
         <PrimaryFeatures />
+        <SecondaryFeatures />
         <Pricing />
       </main>
     </>
