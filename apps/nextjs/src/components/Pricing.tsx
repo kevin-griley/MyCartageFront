@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { CheckIcon } from "~/components/CheckIcon";
 import { Container } from "~/components/Container";
 import { GridPattern } from "~/components/GridPattern";
-import { SectionHeading } from "~/components/SectionHeading";
 
 interface PlanProps {
   name: string;
@@ -101,16 +100,17 @@ export function Pricing() {
     <section
       id="pricing"
       aria-labelledby="pricing-title"
-      className="scroll-mt-14 pb-8 pt-16 sm:scroll-mt-32 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32"
+      className="scroll-mt-14 pb-8 pt-16 sm:scroll-mt-32 sm:pb-10 lg:pb-16"
     >
       <Container>
-        <SectionHeading id="pricing-title">Pricing</SectionHeading>
         <p className="font-display mt-8 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
           Simple, transparent pricing.
         </p>
         <p className="mt-4 max-w-xl text-lg tracking-tight text-slate-600">
           We believe in transparency and simplicity. Get all the current
           features for a low monthly fee.
+          <br />
+          <b>Join now and get free migration from your current system!</b>
         </p>
       </Container>
       <div className="mx-auto mt-16 max-w-5xl lg:px-6">

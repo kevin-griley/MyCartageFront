@@ -51,10 +51,7 @@ const products = [
     icon: ArrowPathIcon,
   },
 ];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
+const callsToAction = [{ name: "Contact sales", href: "#", icon: PhoneIcon }];
 const company = [
   {
     name: "About us",
@@ -152,7 +149,7 @@ export default function Header() {
                     </div>
                   ))}
                 </div>
-                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                <div className="grid grid-cols-1 divide-x divide-gray-900/5 bg-gray-50">
                   {callsToAction.map((item) => (
                     <Link
                       key={item.name}
@@ -172,13 +169,13 @@ export default function Header() {
           </Popover>
 
           <Link
-            href="#"
+            href="/#features"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Industry
           </Link>
           <Link
-            href="#"
+            href="/#pricing"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Pricing
@@ -283,13 +280,13 @@ export default function Header() {
                 </div>
                 <div className="space-y-2 py-6">
                   <Link
-                    href="#"
+                    href="/#features"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Industry
                   </Link>
                   <Link
-                    href="#"
+                    href="/#pricing"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Pricing
@@ -316,7 +313,7 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <div className="sticky bottom-0 grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 text-center">
+          <div className="sticky bottom-0 grid grid-cols-1 divide-x divide-gray-900/5 bg-gray-50 text-center">
             {callsToAction.map((item) => (
               <Link
                 key={item.name}
