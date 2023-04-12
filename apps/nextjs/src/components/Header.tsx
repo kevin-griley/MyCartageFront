@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Dialog, Popover, Transition } from "@headlessui/react";
 import {
   ChevronDownIcon,
@@ -85,7 +86,7 @@ export default function Header() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">MyCartage</span>
             <Image
               src={MyCartageLogo}
@@ -93,7 +94,7 @@ export default function Header() {
               height={45}
               width={240}
             />
-          </a>
+          </Link>
         </div>
 
         <div className="flex lg:hidden">
@@ -139,13 +140,13 @@ export default function Header() {
                         />
                       </div>
                       <div className="flex-auto">
-                        <a
+                        <Link
                           href={item.href}
                           className="block font-semibold text-gray-900"
                         >
                           {item.name}
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">{item.description}</p>
                       </div>
                     </div>
@@ -153,7 +154,7 @@ export default function Header() {
                 </div>
                 <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                   {callsToAction.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
@@ -163,19 +164,25 @@ export default function Header() {
                         aria-hidden="true"
                       />
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </Popover.Panel>
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            href="#"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Industry
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          </Link>
+          <Link
+            href="#"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Pricing
-          </a>
+          </Link>
 
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
@@ -201,13 +208,13 @@ export default function Header() {
                     key={item.name}
                     className="relative rounded-lg p-4 hover:bg-gray-50"
                   >
-                    <a
+                    <Link
                       href={item.href}
                       className="block text-sm font-semibold leading-6 text-gray-900"
                     >
                       {item.name}
                       <span className="absolute inset-0" />
-                    </a>
+                    </Link>
                     <p className="mt-1 text-sm leading-6 text-gray-600">
                       {item.description}
                     </p>
@@ -219,12 +226,12 @@ export default function Header() {
         </Popover.Group>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
+          <Link
             href="https://app.mycartage.com"
             className="inline-flex h-10 items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 "
           >
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </nav>
       <Dialog
@@ -237,7 +244,7 @@ export default function Header() {
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 flex w-full flex-col justify-between overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="p-6">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <Link href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <Image
                   src={MyCartageLogo}
@@ -245,7 +252,7 @@ export default function Header() {
                   height={45}
                   width={240}
                 />
-              </a>
+              </Link>
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -259,7 +266,7 @@ export default function Header() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   {products.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
@@ -271,53 +278,53 @@ export default function Header() {
                         />
                       </div>
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 <div className="space-y-2 py-6">
-                  <a
+                  <Link
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Industry
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Pricing
-                  </a>
+                  </Link>
 
                   {company.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 <div className="py-6">
-                  <a
+                  <Link
                     href="https://app.mycartage.com"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Log in
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
           <div className="sticky bottom-0 grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 text-center">
             {callsToAction.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="p-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-100"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </Dialog.Panel>
