@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import CallToAction2 from "~/components/CallToAction2";
+import { CallToAction2 } from "~/components/CallToAction2";
 import { Content } from "~/components/Content";
 import { FAQ } from "~/components/FAQ";
 import { FeaturesOne } from "~/components/FeaturesOne";
@@ -22,7 +22,6 @@ export default function Featues() {
         <FeaturesOne />
         <CallToAction2 />
         <Content />
-
         <FAQ />
         <ImageSpread />
       </main>
