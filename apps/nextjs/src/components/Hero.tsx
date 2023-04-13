@@ -50,8 +50,8 @@ const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
             y2="1025"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="rgb(20 184 166)" />
+            <stop offset="1" stopColor="rgb(20 184 166)" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -81,8 +81,8 @@ const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
             y2="1025"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="rgb(20 184 166)" />
+            <stop offset="1" stopColor="rgb(20 184 166)" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -112,8 +112,8 @@ const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
             y2="913"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="rgb(20 184 166)" />
+            <stop offset="1" stopColor="rgb(20 184 166)" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -143,8 +143,8 @@ const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
             y2="913"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="rgb(20 184 166)" />
+            <stop offset="1" stopColor="rgb(20 184 166)" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -179,7 +179,7 @@ const AppDemo: FC = () => {
               height={300}
               className="rounded-lg"
             />
-            <div className="mt-4 rounded-lg bg-cyan-500 px-4 py-2 text-center text-sm font-semibold text-white">
+            <div className="mt-4 rounded-lg bg-teal-500 px-4 py-2 text-center text-sm font-semibold text-white">
               LET&apos;S BOOST AHEAD
             </div>
             <div className="mt-3 divide-y divide-gray-100 text-sm">

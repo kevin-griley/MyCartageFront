@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import { CallToAction } from "~/components/CallToAction";
 import Header from "~/components/Header";
 import { Hero } from "~/components/Hero";
 import { Pricing } from "~/components/Pricing";
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
         <Hero />
         <PrimaryFeatures />
         <SecondaryFeatures />
+        <CallToAction />
         <Pricing />
       </main>
     </>

@@ -107,7 +107,7 @@ export default function Header() {
         <Popover.Group className="z-20 hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Product
+              Features
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -168,19 +168,6 @@ export default function Header() {
             </Transition>
           </Popover>
 
-          <Link
-            href="/#features"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Industry
-          </Link>
-          <Link
-            href="/#pricing"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Pricing
-          </Link>
-
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Company
@@ -220,6 +207,20 @@ export default function Header() {
               </Popover.Panel>
             </Transition>
           </Popover>
+
+          <Link
+            href="/#pricing"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            Pricing
+          </Link>
+
+          <Link
+            href="/#features"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            FAQs
+          </Link>
         </Popover.Group>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
