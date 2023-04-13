@@ -19,7 +19,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
-      <main>
+      <main className="flex min-h-screen flex-col">
         <Hero />
         <PrimaryFeatures />
         <SecondaryFeatures />

@@ -5,6 +5,7 @@ import Link from "next/link";
 import clsx from "clsx";
 
 import { Container } from "~/components/Container";
+import { Footer } from "~/components/Footer";
 import Header from "~/components/Header";
 import {
   GitHubIcon,
@@ -89,135 +90,138 @@ export default function About() {
       </Head>
 
       <Header />
-      <Container className="mt-6 sm:my-12">
-        <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-          <div className="lg:pl-20">
-            <div className="max-w-xs px-2.5 lg:max-w-none">
-              <Image
-                src={LargeLogo}
-                alt=""
-                sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
-              />
+      <main className="flex min-h-screen flex-col">
+        <Container className="mt-6 sm:my-12">
+          <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+            <div className="lg:pl-20">
+              <div className="max-w-xs px-2.5 lg:max-w-none">
+                <Image
+                  src={LargeLogo}
+                  alt=""
+                  sizes="(min-width: 1024px) 32rem, 20rem"
+                  className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                />
+              </div>
             </div>
-          </div>
-          <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Our Story
-            </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-              <p>
-                At MyCartage, we believe that the trucking industry has been
-                underserved by technology for far too long. Our founders, who
-                have decades of experience in the transportation and logistics
-                industries, saw firsthand the inefficiencies and limitations of
-                outdated software and decided to take matters into their own
-                hands. They set out to create a modern, cloud-based platform
-                that would simplify and streamline every aspect of trucking
-                operations.
-              </p>
-              <p>
-                Today, MyCartage is proud to offer a comprehensive suite of
-                tools for trucking companies, carriers, shippers, and drivers.
-                Our platform is built on the latest technology, using serverless
-                components and infinitely scalable infrastructure. We&apos;ve
-                designed every feature with the needs of our users in mind, from
-                our intuitive GPS Tracking features to our easy to use mobile
-                applications.
-              </p>
+            <div className="lg:order-first lg:row-span-2">
+              <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+                Our Story
+              </h1>
+              <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+                <p>
+                  At MyCartage, we believe that the trucking industry has been
+                  underserved by technology for far too long. Our founders, who
+                  have decades of experience in the transportation and logistics
+                  industries, saw firsthand the inefficiencies and limitations
+                  of outdated software and decided to take matters into their
+                  own hands. They set out to create a modern, cloud-based
+                  platform that would simplify and streamline every aspect of
+                  trucking operations.
+                </p>
+                <p>
+                  Today, MyCartage is proud to offer a comprehensive suite of
+                  tools for trucking companies, carriers, shippers, and drivers.
+                  Our platform is built on the latest technology, using
+                  serverless components and infinitely scalable infrastructure.
+                  We&apos;ve designed every feature with the needs of our users
+                  in mind, from our intuitive GPS Tracking features to our easy
+                  to use mobile applications.
+                </p>
+              </div>
+
+              <h1 className="mt-6  text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+                Our Mission
+              </h1>
+              <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+                <p>
+                  Our mission at MyCartage is simple: to revolutionize the
+                  trucking industry. We&apos;re committed to providing our
+                  customers with the most advanced, reliable, and user-friendly
+                  software on the market. We believe that technology can help
+                  trucking companies of all sizes and types operate more
+                  efficiently, save money, and ultimately grow their businesses.
+                </p>
+              </div>
+
+              <h1 className="mt-6  text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+                Our Values
+              </h1>
+              <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+                <p>
+                  At MyCartage, we&apos;re more than just a software company.
+                  We&apos;re a team of passionate professionals who are
+                  dedicated to making a difference in the world. Our core values
+                  guide everything we do, from the way we design our products to
+                  the way we interact with our customers:
+                </p>
+
+                <ul
+                  role="list"
+                  className={clsx(
+                    "order-last mt-10 flex flex-col gap-y-3 text-sm text-zinc-600",
+                  )}
+                >
+                  <li className="flex">
+                    <CheckIcon className={"text-zinc-600"} />
+                    <span className="ml-4">
+                      <b>Innovation:</b> We&apos;re always pushing the
+                      boundaries of what&apos;s possible, using the latest
+                      technology to create better solutions.
+                    </span>
+                  </li>
+                  <li className="flex">
+                    <CheckIcon className={"text-zinc-600"} />
+                    <span className="ml-4">
+                      <b>Simplicity:</b> We believe that software should be easy
+                      to use and understand, even for people without technical
+                      backgrounds.
+                    </span>
+                  </li>
+                  <li className="flex">
+                    <CheckIcon className={"text-zinc-600"} />
+                    <span className="ml-4">
+                      <b>Quality:</b> We&apos;re obsessed with quality, from the
+                      code we write to the support we provide.
+                    </span>
+                  </li>
+                  <li className="flex">
+                    <CheckIcon className={"text-zinc-600"} />
+                    <span className="ml-4">
+                      <b>Customer Focus:</b> Our customers are at the heart of
+                      everything we do. We listen to their feedback, anticipate
+                      their needs, and go above and beyond to make them happy.
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
-
-            <h1 className="mt-6  text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Our Mission
-            </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-              <p>
-                Our mission at MyCartage is simple: to revolutionize the
-                trucking industry. We&apos;re committed to providing our
-                customers with the most advanced, reliable, and user-friendly
-                software on the market. We believe that technology can help
-                trucking companies of all sizes and types operate more
-                efficiently, save money, and ultimately grow their businesses.
-              </p>
-            </div>
-
-            <h1 className="mt-6  text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Our Values
-            </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-              <p>
-                At MyCartage, we&apos;re more than just a software company.
-                We&apos;re a team of passionate professionals who are dedicated
-                to making a difference in the world. Our core values guide
-                everything we do, from the way we design our products to the way
-                we interact with our customers:
-              </p>
-
-              <ul
-                role="list"
-                className={clsx(
-                  "order-last mt-10 flex flex-col gap-y-3 text-sm text-zinc-600",
-                )}
-              >
-                <li className="flex">
-                  <CheckIcon className={"text-zinc-600"} />
-                  <span className="ml-4">
-                    <b>Innovation:</b> We&apos;re always pushing the boundaries
-                    of what&apos;s possible, using the latest technology to
-                    create better solutions.
-                  </span>
-                </li>
-                <li className="flex">
-                  <CheckIcon className={"text-zinc-600"} />
-                  <span className="ml-4">
-                    <b>Simplicity:</b> We believe that software should be easy
-                    to use and understand, even for people without technical
-                    backgrounds.
-                  </span>
-                </li>
-                <li className="flex">
-                  <CheckIcon className={"text-zinc-600"} />
-                  <span className="ml-4">
-                    <b>Quality:</b> We&apos;re obsessed with quality, from the
-                    code we write to the support we provide.
-                  </span>
-                </li>
-                <li className="flex">
-                  <CheckIcon className={"text-zinc-600"} />
-                  <span className="ml-4">
-                    <b>Customer Focus:</b> Our customers are at the heart of
-                    everything we do. We listen to their feedback, anticipate
-                    their needs, and go above and beyond to make them happy.
-                  </span>
-                </li>
+            <div className="lg:pl-20">
+              <ul role="list">
+                <SocialLink href="#" icon={TwitterIcon}>
+                  Follow on Twitter
+                </SocialLink>
+                <SocialLink href="#" icon={InstagramIcon} className="mt-4">
+                  Follow on Instagram
+                </SocialLink>
+                <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+                  Follow on GitHub
+                </SocialLink>
+                <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+                  Follow on LinkedIn
+                </SocialLink>
+                <SocialLink
+                  href="mailto:kevin@griley.app"
+                  icon={MailIcon}
+                  className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+                >
+                  Kevin@Griley.app
+                </SocialLink>
               </ul>
             </div>
           </div>
-          <div className="lg:pl-20">
-            <ul role="list">
-              <SocialLink href="#" icon={TwitterIcon}>
-                Follow on Twitter
-              </SocialLink>
-              <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-                Follow on Instagram
-              </SocialLink>
-              <SocialLink href="#" icon={GitHubIcon} className="mt-4">
-                Follow on GitHub
-              </SocialLink>
-              <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
-                Follow on LinkedIn
-              </SocialLink>
-              <SocialLink
-                href="mailto:kevin@griley.app"
-                icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-              >
-                Kevin@Griley.app
-              </SocialLink>
-            </ul>
-          </div>
-        </div>
-      </Container>
+        </Container>
+      </main>
+      <Footer />
     </>
   );
 }

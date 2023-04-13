@@ -15,6 +15,7 @@ import {
 } from "contentlayer/generated";
 
 import { Container } from "~/components/Container";
+import { Footer } from "~/components/Footer";
 import Header from "~/components/Header";
 import { Icons } from "~/components/icons";
 import { Mdx } from "~/components/mdx";
@@ -61,8 +62,8 @@ const PostPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
       <main className="flex min-h-screen flex-col">
-        <Header />
         <Container>
           <article className="container relative max-w-3xl py-6 lg:py-10">
             <Link
@@ -138,6 +139,7 @@ const PostPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </article>
         </Container>
       </main>
+      <Footer />
     </>
   );
 };
