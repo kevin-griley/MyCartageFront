@@ -83,10 +83,8 @@ export default function About() {
     <>
       <Head>
         <title>About - MyCartage TMS</title>
-        <meta
-          name="description"
-          content="I’m Spencer Sharp. I live in New York City, where I design the future."
-        />
+        <meta name="description" content="Airfreight TMS with Gps Tracking" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
