@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 import { allDocs, type Doc } from "contentlayer/generated";
 
 import { Container } from "~/components/Container";
-import Header from "~/components/Header";
+import { Header } from "~/components/Header";
 import { Mdx } from "~/components/mdx";
 import { DocsPageHeader } from "~/components/page-header";
 import { DocsPager } from "~/components/pager";

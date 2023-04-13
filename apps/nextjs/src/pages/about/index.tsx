@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 import { Container } from "~/components/Container";
 import { Footer } from "~/components/Footer";
-import Header from "~/components/Header";
+import { Header } from "~/components/Header";
 import {
   GitHubIcon,
   InstagramIcon,

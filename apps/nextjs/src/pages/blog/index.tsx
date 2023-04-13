@@ -6,7 +6,7 @@ import { compareDesc } from "date-fns";
 
 import { Container } from "~/components/Container";
 import { Footer } from "~/components/Footer";
-import Header from "~/components/Header";
+import { Header } from "~/components/Header";
 import { formatDate } from "~/lib/utils";
 
 export const metadata = {

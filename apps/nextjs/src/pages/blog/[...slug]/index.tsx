@@ -16,7 +16,7 @@ import {
 
 import { Container } from "~/components/Container";
 import { Footer } from "~/components/Footer";
-import Header from "~/components/Header";
+import { Header } from "~/components/Header";
 import { Icons } from "~/components/icons";
 import { Mdx } from "~/components/mdx";
 import { formatDate } from "~/lib/utils";

@@ -2,18 +2,15 @@ import { Fragment, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, Popover, Transition } from "@headlessui/react";
+import { ChevronDownIcon, PhoneIcon } from "@heroicons/react/20/solid";
 import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
-import {
-  ArrowPathIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
+  BuildingLibraryIcon,
+  DevicePhoneMobileIcon,
   FingerPrintIcon,
+  MapIcon,
   SquaresPlusIcon,
+  TableCellsIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 
@@ -21,34 +18,41 @@ import MyCartageLogo from "~/images/logos/MyCartage-logo.png";
 
 const products = [
   {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
+    name: "GPS Tracking",
+    description: "Track your shipments in real-time",
+    href: "/features#gps-tracking",
+    icon: MapIcon,
   },
   {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
+    name: "Mobile Applications",
+    description: "Smart phone apps for drivers and dispatchers",
+    href: "/features#mobile-applications",
+    icon: DevicePhoneMobileIcon,
   },
   {
     name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
+    description:
+      "Your data will be safe and secure. Auth managed by Azure Active Directory",
+    href: "/features#data-security",
     icon: FingerPrintIcon,
   },
   {
     name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
+    description: "Connect with Customers & 3rd Party Systems",
+    href: "/features#integrations",
     icon: SquaresPlusIcon,
   },
   {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
+    name: "Modern Dispatching",
+    description: "Dispatching for the Modern Age",
+    href: "/features#dispatching",
+    icon: TableCellsIcon,
+  },
+  {
+    name: "Custom Invoicing",
+    description: "Custom Invoicing for your Customers",
+    href: "/features#dispatching",
+    icon: BuildingLibraryIcon,
   },
 ];
 const callsToAction = [{ name: "Contact sales", href: "#", icon: PhoneIcon }];
@@ -73,7 +77,7 @@ const company = [
   },
 ];
 
-export default function Header() {
+export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -216,7 +220,7 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/#features"
+            href="/features#FAQ"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             FAQs
