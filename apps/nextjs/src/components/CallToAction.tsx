@@ -1,7 +1,6 @@
 import { type FC } from "react";
 import Link from "next/link";
 
-import { Button } from "~/components/Button";
 import { CircleBackground } from "~/components/CircleBackground";
 import { Container } from "~/components/Container";
 

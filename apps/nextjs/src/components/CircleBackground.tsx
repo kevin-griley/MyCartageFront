@@ -4,12 +4,14 @@ interface CircleBackgroundProps extends SVGProps<SVGSVGElement> {
   color: string;
   width?: number;
   height?: number;
+  opacity?: number;
 }
 
 export const CircleBackground: FC<CircleBackgroundProps> = ({
   color,
   width = 558,
   height = 558,
+  opacity = 0.2,
   ...props
 }) => {
   const id = useId();
@@ -37,7 +39,7 @@ export const CircleBackground: FC<CircleBackgroundProps> = ({
         </linearGradient>
       </defs>
       <path
-        opacity=".2"
+        opacity={opacity}
         d="M1 279C1 125.465 125.465 1 279 1s278 124.465 278 278-124.465 278-278 278S1 432.535 1 279Z"
         stroke={color}
       />
@@ -45,7 +47,7 @@ export const CircleBackground: FC<CircleBackgroundProps> = ({
         d="M1 279C1 125.465 125.465 1 279 1"
         stroke={`url(#${id})`}
         strokeLinecap="round"
-        strokeWidth={8}
+        strokeWidth={3}
       />
     </svg>
   );

@@ -15,6 +15,7 @@ import fedex_logo from "~/images/logos/fedex_logo-cropped.svg";
 import flexport_logo from "~/images/logos/flexport_logo-cropped.svg";
 import kuehne_nagel_logo from "~/images/logos/kuehne_nagel_logo-cropped.svg";
 import lynden_logo from "~/images/logos/lynden_logo-cropped.svg";
+import { CircleBackground } from "./CircleBackground";
 
 type BackgroundIllustrationProps = React.HTMLAttributes<HTMLDivElement>;
 
@@ -24,130 +25,37 @@ const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
   const id = useId();
   return (
     <div {...props}>
-      <svg
-        viewBox="0 0 1026 1026"
-        fill="none"
-        aria-hidden="true"
-        className="animate-spin-slower absolute inset-0 h-full w-full p-4"
-      >
-        <path
-          d="M1025 513c0 282.77-229.23 512-512 512S1 795.77 1 513 230.23 1 513 1s512 229.23 512 512Z"
-          stroke="#D4D4D4"
-          strokeOpacity="1"
-        />
-        <path
-          d="M513 1025C230.23 1025 1 795.77 1 513"
-          stroke={`url(#${id}-gradient-1)`}
-          strokeWidth={8}
-          strokeLinecap="round"
-        />
-        <defs>
-          <linearGradient
-            id={`${id}-gradient-1`}
-            x1="1"
-            y1="513"
-            x2="1"
-            y2="1025"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="rgb(20 184 166)" />
-            <stop offset="1" stopColor="rgb(20 184 166)" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <svg
-        viewBox="0 0 1026 1026"
-        fill="none"
-        aria-hidden="true"
-        className="animate-spin-slow absolute inset-0 h-full w-full p-20"
-      >
-        <path
-          d="M1025 513c0 282.77-229.23 512-512 512S1 795.77 1 513 230.23 1 513 1s512 229.23 512 512Z"
-          stroke="#D4D4D4"
-          strokeOpacity="1"
-        />
-        <path
-          d="M513 1025C230.23 1025 1 795.77 1 513"
-          stroke={`url(#${id}-gradient-1)`}
-          strokeWidth={8}
-          strokeLinecap="round"
-        />
-        <defs>
-          <linearGradient
-            id={`${id}-gradient-1`}
-            x1="1"
-            y1="513"
-            x2="1"
-            y2="1025"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="rgb(20 184 166)" />
-            <stop offset="1" stopColor="rgb(20 184 166)" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <svg
-        viewBox="0 0 1026 1026"
-        fill="none"
-        aria-hidden="true"
-        className="animate-spin-reverse-slow absolute inset-0 hidden h-full w-full p-10 sm:block"
-      >
-        <path
-          d="M913 513c0 220.914-179.086 400-400 400S113 733.914 113 513s179.086-400 400-400 400 179.086 400 400Z"
-          stroke="#D4D4D4"
-          strokeOpacity="1"
-        />
-        <path
-          d="M913 513c0 220.914-179.086 400-400 400"
-          stroke={`url(#${id}-gradient-2)`}
-          strokeWidth={8}
-          strokeLinecap="round"
-        />
-        <defs>
-          <linearGradient
-            id={`${id}-gradient-2`}
-            x1="913"
-            y1="513"
-            x2="913"
-            y2="913"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="rgb(20 184 166)" />
-            <stop offset="1" stopColor="rgb(20 184 166)" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <svg
-        viewBox="0 0 1026 1026"
-        fill="none"
-        aria-hidden="true"
-        className="animate-spin-reverse-slower absolute inset-0 hidden h-full w-full p-32 lg:block"
-      >
-        <path
-          d="M913 513c0 220.914-179.086 400-400 400S113 733.914 113 513s179.086-400 400-400 400 179.086 400 400Z"
-          stroke="#D4D4D4"
-          strokeOpacity="1"
-        />
-        <path
-          d="M913 513c0 220.914-179.086 400-400 400"
-          stroke={`url(#${id}-gradient-2)`}
-          strokeWidth={8}
-          strokeLinecap="round"
-        />
-        <defs>
-          <linearGradient
-            id={`${id}-gradient-2`}
-            x1="913"
-            y1="513"
-            x2="913"
-            y2="913"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="rgb(20 184 166)" />
-            <stop offset="1" stopColor="rgb(20 184 166)" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
+      <CircleBackground
+        color="#D4D4D4"
+        className="animate-spin-slower absolute inset-0 m-auto"
+        height={1000}
+        width={1000}
+        opacity={0.5}
+      />
+
+      <CircleBackground
+        color="#D4D4D4"
+        className="animate-spin-slower absolute inset-0 m-auto"
+        height={850}
+        width={850}
+        opacity={0.5}
+      />
+
+      <CircleBackground
+        color="#D4D4D4"
+        className="animate-spin-slower absolute inset-0 m-auto  hidden sm:block"
+        height={700}
+        width={700}
+        opacity={0.5}
+      />
+
+      <CircleBackground
+        color="#D4D4D4"
+        className="animate-spin-slower absolute inset-0 m-auto hidden lg:block"
+        height={550}
+        width={550}
+        opacity={0.5}
+      />
     </div>
   );
 };
@@ -233,21 +141,20 @@ export function Hero() {
   }
 
   const logos: Logo[] = [
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     { name: "Expeditors", logo: expeditors_logo, height: 35 },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
     { name: "Kuehne & Nagel", logo: kuehne_nagel_logo, height: 35 },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
     { name: "Ceva", logo: ceva_logo, height: 25 },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
     { name: "Flexport", logo: flexport_logo, height: 35 },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
     { name: "DSV", logo: dsv_logo, height: 27 },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
     { name: "Lynden", logo: lynden_logo, height: 30 },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
     { name: "Fedex", logo: fedex_logo, height: 30 },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
     { name: "DHL", logo: dhl_logo, height: 25 },
   ];
 
