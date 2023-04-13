@@ -1,4 +1,5 @@
 import { type FC } from "react";
+import Link from "next/link";
 
 import { Button } from "~/components/Button";
 import { CircleBackground } from "~/components/CircleBackground";
@@ -23,7 +24,12 @@ export const CallToAction: FC = () => {
             MyCartage in seconds.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button variant={"light"}> Get Started Now </Button>
+            <Link
+              href="https://app.mycartage.com"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-slate-900 transition-colors hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 "
+            >
+              Get Started Now <span aria-hidden="true">&rarr;</span>
+            </Link>
           </div>
         </div>
       </Container>
