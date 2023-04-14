@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { Container } from "~/components/Container";
 import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
+import { ImageSpread } from "~/components/ImageSpread";
 import {
   GitHubIcon,
   InstagramIcon,
@@ -218,6 +219,7 @@ export default function About() {
             </div>
           </div>
         </Container>
+        <ImageSpread />
       </main>
       <Footer />
     </>

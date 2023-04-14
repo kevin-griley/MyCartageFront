@@ -58,7 +58,7 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for running your trucking operation"
-      className="relative overflow-hidden bg-gradient-to-r from-slate-800 from-10% via-slate-900 via-30% to-slate-700 to-90% pb-28 pt-20 sm:py-32"
+      className="relative overflow-hidden bg-gradient-to-r from-slate-900 from-10% via-slate-950 via-30% to-slate-900 to-90% pb-28 pt-20 sm:py-32"
     >
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">

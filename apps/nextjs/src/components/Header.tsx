@@ -220,7 +220,7 @@ export function Header() {
           </Link>
 
           <Link
-            href="/features#FAQ"
+            href="/#FAQ"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             FAQs
