@@ -1,5 +1,5 @@
 import { useId, type FC } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
 
@@ -8,7 +8,13 @@ import screenshotContacts from "~/images/screenshots/photoOne.png";
 import screenshotProfitLoss from "~/images/screenshots/photoThree.png";
 import screenshotInventory from "~/images/screenshots/photoTwo.png";
 
-const features = [
+const features: {
+  name: string | JSX.Element;
+  summary: string;
+  description: string;
+  image: StaticImageData;
+  icon: () => JSX.Element;
+}[] = [
   {
     name: "Reporting",
     summary:
@@ -97,7 +103,7 @@ const features = [
 ];
 
 interface FeatureProps {
-  feature: any;
+  feature: (typeof features)[number];
   isActive: boolean;
   className?: string;
 }
@@ -129,7 +135,7 @@ const Feature: FC<FeatureProps> = ({
           isActive ? "text-blue-600" : "text-slate-600",
         )}
       >
-        {feature.name}
+        {feature.name as string}
       </h3>
       <p className="font-display mt-2 text-xl text-slate-900">
         {feature.summary}
@@ -143,7 +149,7 @@ function FeaturesMobile() {
   return (
     <div className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
       {features.map((feature) => (
-        <div key={feature.name}>
+        <div key={feature.name as string}>
           <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
           <div className="relative mt-10 pb-10">
             <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6" />
@@ -171,13 +177,13 @@ function FeaturesDesktop() {
           <Tab.List className="grid grid-cols-3 gap-x-8">
             {features.map((feature, featureIndex) => (
               <Feature
-                key={feature.name}
+                key={feature.name as string}
                 feature={{
                   ...feature,
                   name: (
                     <Tab className="[&:not(:focus-visible)]:focus:outline-none">
                       <span className="absolute inset-0" />
-                      {feature.name}
+                      {feature.name as string}
                     </Tab>
                   ),
                 }}
@@ -191,7 +197,7 @@ function FeaturesDesktop() {
               {features.map((feature, featureIndex) => (
                 <Tab.Panel
                   static
-                  key={feature.name}
+                  key={feature.name as string}
                   className={clsx(
                     "px-5 transition duration-500 ease-in-out [&:not(:focus-visible)]:focus:outline-none",
                     featureIndex !== selectedIndex && "opacity-60",

@@ -10,7 +10,7 @@ import * as components from "~/components/mdx-features";
 
 ## GPS Tracking {{ feat: 'GPS' }}
 
-In the latest release, I've added support for commit message and description suggestions via an integration with OpenAI. Commit looks at all of your changes, and feeds that into the machine with a bit of prompt-tuning to get back a commit message that does a surprisingly good job at describing the intent of your changes.
+Insss the latest release, I've added support for commit message and description suggestions via an integration with OpenAI. Commit looks at all of your changes, and feeds that into the machine with a bit of prompt-tuning to get back a commit message that does a surprisingly good job at describing the intent of your changes.
 
 It's also been a pretty helpful way to remind myself what the hell I was working on at the end of the day yesterday when I get back to my computer and realize I didn't commit any of my work.
 
@@ -82,6 +82,7 @@ I'd be lying if I really thought this was that useful but I was looking for an e
 
 export default ({ children }) => (
   <MDXProvider components={components}>
-    <Layout> {children} </Layout>
+    {" "}
+    <Layout> {children} </Layout>{" "}
   </MDXProvider>
 );

@@ -1,6 +1,6 @@
-import { useId } from "react";
+import { useId, type FC } from "react";
 import Link from "next/link";
-import { ChevronLeftIcon } from "lucide-react";
+import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 
 import { Intro, IntroFooter } from "~/components/Intro";
 
@@ -67,12 +67,7 @@ function Glow() {
   );
 }
 
-interface FixedSidebarProps {
-  main: React.ReactNode;
-  footer: React.ReactNode;
-}
-
-function FixedSidebar({ main, footer }: FixedSidebarProps) {
+function FixedSidebar() {
   return (
     <div className="relative flex-none overflow-hidden px-6 lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex lg:px-0">
       <Glow />
@@ -85,7 +80,8 @@ function FixedSidebar({ main, footer }: FixedSidebarProps) {
             >
               <span className="sr-only">Back to</span>
               <span className="flex items-center gap-x-1 text-2xl font-bold leading-6 tracking-tighter">
-                <ChevronLeftIcon className="mr-2 flex-none text-gray-400" />
+                <ChevronLeftIcon className="mr-2 h-6 w-6 flex-none text-gray-400" />
+
                 <span>
                   {" "}
                   Back to
@@ -100,10 +96,12 @@ function FixedSidebar({ main, footer }: FixedSidebarProps) {
             </Link>
           </div>
           <div className="pb-16 pt-20 sm:pb-20 sm:pt-32 lg:py-20">
-            <div className="relative">{main}</div>
+            <div className="relative">
+              <Intro />
+            </div>
           </div>
           <div className="flex flex-1 items-end justify-center pb-4 lg:justify-start lg:pb-6">
-            {footer}
+            <IntroFooter />
           </div>
         </div>
       </div>
@@ -115,10 +113,10 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export function Layout({ children }: LayoutProps) {
+export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <FixedSidebar main={<Intro />} footer={<IntroFooter />} />
+      <FixedSidebar />
       <div className="relative flex-auto">
         <Timeline />
         <main className="space-y-20 bg-slate-950 py-20 text-zinc-300 sm:space-y-32 sm:py-32">
@@ -127,4 +125,4 @@ export function Layout({ children }: LayoutProps) {
       </div>
     </>
   );
-}
+};

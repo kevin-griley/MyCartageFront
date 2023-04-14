@@ -1,15 +1,15 @@
-import { createContext, useContext } from 'react'
+import { createContext, useContext } from "react";
 
-let FeedContext = createContext({ isFeed: false })
+const FeedContext = createContext({ isFeed: false });
 
-export function FeedProvider({ children }) {
+export function FeedProvider({ children }: { children: React.ReactNode }) {
   return (
     <FeedContext.Provider value={{ isFeed: true }}>
       {children}
     </FeedContext.Provider>
-  )
+  );
 }
 
 export function useFeed() {
-  return useContext(FeedContext)
+  return useContext(FeedContext);
 }

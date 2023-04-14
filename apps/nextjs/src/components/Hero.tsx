@@ -1,4 +1,4 @@
-import { useId, type FC } from "react";
+import { type FC } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { ArrowUpIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
@@ -22,7 +22,6 @@ type BackgroundIllustrationProps = React.HTMLAttributes<HTMLDivElement>;
 const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
   props,
 ) => {
-  const id = useId();
   return (
     <div {...props}>
       <CircleBackground

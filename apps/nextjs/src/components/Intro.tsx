@@ -4,7 +4,6 @@ import { Coins, Factory, HelpCircle } from "lucide-react";
 
 import { IconLink } from "~/components/IconLink";
 import Logo from "~/images/logos/MyCartage-slogan.png";
-import { Button } from "./Button";
 
 function BookIcon(props: React.SVGProps<SVGSVGElement>) {
   return (

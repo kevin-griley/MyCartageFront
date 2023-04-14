@@ -39,6 +39,7 @@
     "recma-import-images": "^0.0.2",
     "remark-rehype-wrap": "^0.0.2",
     "remark-unwrap-images": "^3.0.1",
+    "sharp": "^0.32.0",
     "shiki": "^0.14.1",
     "solid": "link:@heroicons/react/20/solid",
     "tailwind-merge": "^1.11.0",

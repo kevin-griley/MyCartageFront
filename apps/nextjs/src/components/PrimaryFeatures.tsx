@@ -42,7 +42,7 @@ export function PrimaryFeatures() {
   useEffect(() => {
     const lgMediaQuery = window.matchMedia("(min-width: 1024px)");
 
-    function onMediaQueryChange({ matches }: any) {
+    function onMediaQueryChange({ matches }: { matches: boolean }) {
       setTabOrientation(matches ? "vertical" : "horizontal");
     }
 

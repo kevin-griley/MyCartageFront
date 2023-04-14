@@ -1,14 +1,14 @@
 /** @typedef {import('next').NextConfig} NextConfig */
 /** @typedef {import('webpack').Configuration} WebpackConfig */
 
-import withMDX from "@next/mdx";
+import nextMDX from "@next/mdx";
 import { withContentlayer } from "next-contentlayer";
 
 import { recmaPlugins } from "./src/mdx/recma.mjs";
 import { rehypePlugins } from "./src/mdx/rehype.mjs";
 import { remarkPlugins } from "./src/mdx/remark.mjs";
 
-const mdxSupport = withMDX({
+const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins,
@@ -42,7 +42,7 @@ const config = {
 };
 
 /** @type {Array<(config: NextConfig) => NextConfig>} */
-const plugins = [withContentlayer, mdxSupport];
+const plugins = [withContentlayer, withMDX];
 
 export default plugins.reduce((config, plugin) => {
   return plugin(config);
