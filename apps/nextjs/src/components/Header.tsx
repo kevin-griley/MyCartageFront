@@ -33,7 +33,7 @@ const products = [
     name: "Security",
     description:
       "Your data will be safe and secure. Auth managed by Azure Active Directory",
-    href: "/features#data-security",
+    href: "/features#advanced-security",
     icon: FingerPrintIcon,
   },
   {
@@ -45,13 +45,13 @@ const products = [
   {
     name: "Modern Dispatching",
     description: "Dispatching for the Modern Age",
-    href: "/features#dispatching",
+    href: "/features#modern-dispatching",
     icon: TableCellsIcon,
   },
   {
     name: "Custom Invoicing",
     description: "Custom Invoicing for your Customers",
-    href: "/features#dispatching",
+    href: "/features#custom-invoicing",
     icon: BuildingLibraryIcon,
   },
 ];

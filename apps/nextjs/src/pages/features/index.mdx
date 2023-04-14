@@ -2,11 +2,13 @@ import { MDXProvider } from "@mdx-js/react";
 
 import { Layout } from "~/components/Layout";
 import { SparkleIcon } from "~/components/SparkleIcon";
-import * as mdxComponents from "~/components/mdx-features";
+import * as components from "~/components/mdx-features";
 
 ---
 
-## Commit message suggestions
+![](~/images/commit-suggestions.png)
+
+## GPS Tracking {{ feat: 'GPS' }}
 
 In the latest release, I've added support for commit message and description suggestions via an integration with OpenAI. Commit looks at all of your changes, and feeds that into the machine with a bit of prompt-tuning to get back a commit message that does a surprisingly good job at describing the intent of your changes.
 
@@ -21,7 +23,9 @@ It's also been a pretty helpful way to remind myself what the hell I was working
 
 ---
 
-## Project configuration files
+![](~/images/configuration-files.png)
+
+## Mobile Applications {{ feat: 'MOBILE' }}
 
 I've added support for creating per-project `.commitrc` files that override your global settings for that particular project. Went with YAML for these because personally I'm sick of quoting keys in JSON all the time, or accidentally leaving in a trailing comma.
 
@@ -33,7 +37,9 @@ I've added support for creating per-project `.commitrc` files that override your
 
 ---
 
-## Dark mode support
+![](~/images/dark-mode.png)
+
+## Advanced Security {{ feat: 'SECURITY' }}
 
 I released this thing last week hoping a couple of people would say "awesome job" and make me feel good about what I'd built but instead I just got a ton of people shaming me on Twitter for being such a horrible person for only shipping a light UI.
 
@@ -46,16 +52,36 @@ I released this thing last week hoping a couple of people would say "awesome job
 
 ---
 
-## Commit v0.1.0
+![](~/images/first-release.png)
+
+## Integrations {{  feat: 'DATA' }}
+
+Commit is a command palette-style Git client you can pull up from anywhere with a keyboard shortcut that makes it really easy to commit your work. It uses the "last modified" timestamp of the files in all of your projects to automatically know which project you're in the middle of working on, so any time you pull up the UI it's already got the right project selected — you just have to type your commit message, hit <kbd>Cmd</kbd> + <kbd>Enter</kbd> and your changes are captured.
+
+I'd be lying if I really thought this was that useful but I was looking for an excuse to learn macOS development and here we are. It's open source at least so maybe you can find something interesting in the code even if the app itself is a total waste of hard drive space.
+
+---
+
+![](~/images/first-release.png)
+
+## Modern Dispatching {{  feat: 'DISPATCH' }}
+
+Commit is a command palette-style Git client you can pull up from anywhere with a keyboard shortcut that makes it really easy to commit your work. It uses the "last modified" timestamp of the files in all of your projects to automatically know which project you're in the middle of working on, so any time you pull up the UI it's already got the right project selected — you just have to type your commit message, hit <kbd>Cmd</kbd> + <kbd>Enter</kbd> and your changes are captured.
+
+I'd be lying if I really thought this was that useful but I was looking for an excuse to learn macOS development and here we are. It's open source at least so maybe you can find something interesting in the code even if the app itself is a total waste of hard drive space.
+
+---
+
+![](~/images/first-release.png)
+
+## Custom Invoicing {{  feat: 'BILLING' }}
 
 Commit is a command palette-style Git client you can pull up from anywhere with a keyboard shortcut that makes it really easy to commit your work. It uses the "last modified" timestamp of the files in all of your projects to automatically know which project you're in the middle of working on, so any time you pull up the UI it's already got the right project selected — you just have to type your commit message, hit <kbd>Cmd</kbd> + <kbd>Enter</kbd> and your changes are captured.
 
 I'd be lying if I really thought this was that useful but I was looking for an excuse to learn macOS development and here we are. It's open source at least so maybe you can find something interesting in the code even if the app itself is a total waste of hard drive space.
 
 export default ({ children }) => (
-  <MDXProvider components={mdxComponents}>
+  <MDXProvider components={components}>
     <Layout> {children} </Layout>
   </MDXProvider>
 );
-
-;

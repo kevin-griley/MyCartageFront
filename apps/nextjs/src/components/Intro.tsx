@@ -1,6 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
+import { Coins, Factory, HelpCircle } from "lucide-react";
 
 import { IconLink } from "~/components/IconLink";
+import Logo from "~/images/logos/MyCartage-slogan.png";
+import { Button } from "./Button";
 
 function BookIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -10,60 +14,52 @@ function BookIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function GitHubIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor" {...props}>
-      <path d="M8 .198a8 8 0 0 0-8 8 7.999 7.999 0 0 0 5.47 7.59c.4.076.547-.172.547-.384 0-.19-.007-.694-.01-1.36-2.226.482-2.695-1.074-2.695-1.074-.364-.923-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.224 1.873.87 2.33.666.072-.518.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.954 0-.873.31-1.586.823-2.146-.09-.202-.36-1.016.07-2.118 0 0 .67-.214 2.2.82a7.67 7.67 0 0 1 2-.27 7.67 7.67 0 0 1 2 .27c1.52-1.034 2.19-.82 2.19-.82.43 1.102.16 1.916.08 2.118.51.56.82 1.273.82 2.146 0 3.074-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38A7.972 7.972 0 0 0 16 8.199a8 8 0 0 0-8-8Z" />
-    </svg>
-  );
-}
-
-function FeedIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor" {...props}>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M2.5 3a.5.5 0 0 1 .5-.5h.5c5.523 0 10 4.477 10 10v.5a.5.5 0 0 1-.5.5h-.5a.5.5 0 0 1-.5-.5v-.5A8.5 8.5 0 0 0 3.5 4H3a.5.5 0 0 1-.5-.5V3Zm0 4.5A.5.5 0 0 1 3 7h.5A5.5 5.5 0 0 1 9 12.5v.5a.5.5 0 0 1-.5.5H8a.5.5 0 0 1-.5-.5v-.5a4 4 0 0 0-4-4H3a.5.5 0 0 1-.5-.5v-.5Zm0 5a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"
-      />
-    </svg>
-  );
-}
-
-function TwitterIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor" {...props}>
-      <path d="M5.526 13.502c5.032 0 7.784-4.168 7.784-7.783 0-.119 0-.237-.008-.353a5.566 5.566 0 0 0 1.364-1.418 5.46 5.46 0 0 1-1.571.431c.571-.342.998-.88 1.203-1.513a5.483 5.483 0 0 1-1.737.664 2.738 2.738 0 0 0-4.662 2.495 7.767 7.767 0 0 1-5.638-2.858 2.737 2.737 0 0 0 .847 3.651 2.715 2.715 0 0 1-1.242-.341v.035a2.737 2.737 0 0 0 2.195 2.681 2.73 2.73 0 0 1-1.235.047 2.739 2.739 0 0 0 2.556 1.9 5.49 5.49 0 0 1-4.049 1.133A7.744 7.744 0 0 0 5.526 13.5" />
-    </svg>
-  );
-}
-
 export function Intro() {
   return (
     <>
       <div>
-        <Link href="/">DADADA</Link>
+        <Link href="/">
+          <Image src={Logo} alt="MyCartage-logo" width={400} height={100} />
+        </Link>
       </div>
       <h1 className="font-display mt-14 text-4xl/tight font-light text-white">
-        Open-source Git client{" "}
-        <span className="text-sky-300">for macOS minimalists</span>
+        Airfreight Trucking TMS
+      </h1>
+      <h1 className="font-display text-4xl/tight font-light text-teal-300">
+        GPS Focused Solutions
+      </h1>
+      <h1 className="font-display text-3xl/tight font-light text-white">
+        Next Generation Technology
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
-        Commit is a lightweight Git client you can open from anywhere any time
-        you’re ready to commit your work with a single keyboard shortcut. It’s
-        fast, beautiful, and completely unnecessary.
+        MyCartage is a cloud-based TMS that provides a complete solution for
+        airfreight trucking companies. We provide a GPS focused solution to
+        manage your fleet, drivers, and shipments. Our technology is designed to
+        help you run your business more efficiently and profitably.
       </p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
-        <IconLink href="#" icon={BookIcon} className="flex-none">
-          Documentation
+        <IconLink href="/docs" icon={BookIcon} className="flex-none">
+          Docs
         </IconLink>
-        <IconLink href="#" icon={GitHubIcon} className="flex-none">
-          GitHub
+        <IconLink href="/#pricing" icon={Coins} className="flex-none">
+          Pricing
         </IconLink>
-        <IconLink href="/rss/feed.xml" icon={FeedIcon} className="flex-none">
-          RSS
+        <IconLink href="/about" icon={Factory} className="flex-none">
+          About
         </IconLink>
+        <IconLink href="/#FAQ" icon={HelpCircle} className="flex-none">
+          FAQs
+        </IconLink>
+      </div>
+
+      <div className="mt-10 flex items-center justify-center gap-x-6">
+        <Link
+          href="https://app.mycartage.com"
+          className="rounded-md bg-zinc-100 px-20 py-2.5 text-sm font-semibold text-slate-950 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Get started
+        </Link>
       </div>
     </>
   );
@@ -72,9 +68,9 @@ export function Intro() {
 export function IntroFooter() {
   return (
     <p className="flex items-baseline gap-x-2 text-[0.8125rem]/6 text-gray-500">
-      Brought to you by{" "}
-      <IconLink href="#" icon={TwitterIcon} compact large>
-        Joe Davola
+      &copy; Copyright {new Date().getFullYear()}. All rights reserved.{" "}
+      <IconLink href="/" icon={"/favicon.ico"} compact large>
+        MyCartage
       </IconLink>
     </p>
   );

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 
@@ -6,7 +7,7 @@ interface IconLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
   compact?: boolean;
   large?: boolean;
-  icon: React.ElementType;
+  icon: React.ElementType | string;
 }
 
 export function IconLink({
@@ -29,7 +30,19 @@ export function IconLink({
       )}
     >
       <span className="absolute inset-0 -z-10 scale-75 rounded-lg bg-white/5 opacity-0 transition group-hover:scale-100 group-hover:opacity-100" />
-      <Icon className={clsx("flex-none", large ? "h-6 w-6" : "h-4 w-4")} />
+
+      {typeof Icon === "string" ? (
+        <Image
+          src={Icon}
+          alt="favicon"
+          className={clsx("flex-none", large ? "h-6 w-6" : "h-4 w-4")}
+          width={large ? 24 : 16}
+          height={large ? 24 : 16}
+        />
+      ) : (
+        <Icon className={clsx("flex-none", large ? "h-6 w-6" : "h-4 w-4")} />
+      )}
+
       <span className="self-baseline text-white">{children}</span>
     </Link>
   );

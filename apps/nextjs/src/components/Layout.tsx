@@ -1,4 +1,6 @@
 import { useId } from "react";
+import Link from "next/link";
+import { ChevronLeftIcon } from "lucide-react";
 
 import { Intro, IntroFooter } from "~/components/Intro";
 
@@ -75,7 +77,28 @@ function FixedSidebar({ main, footer }: FixedSidebarProps) {
     <div className="relative flex-none overflow-hidden px-6 lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex lg:px-0">
       <Glow />
       <div className="relative flex w-full lg:pointer-events-auto lg:mr-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem] lg:overflow-y-auto lg:pl-[max(4rem,calc(50%-38rem))]">
-        <div className="mx-auto max-w-lg lg:mx-0 lg:flex lg:w-96 lg:max-w-none lg:flex-col lg:before:flex-1 lg:before:pt-6">
+        <div className="mx-auto max-w-lg lg:mx-0 lg:flex lg:w-96 lg:max-w-none lg:flex-col lg:before:pt-6">
+          <div className="flex flex-1 items-start justify-center pb-4 lg:justify-start lg:pb-6">
+            <Link
+              href="/"
+              className="flex items-center space-x-2 text-lg font-medium tracking-tight text-zinc-300 hover:text-zinc-200"
+            >
+              <span className="sr-only">Back to</span>
+              <span className="flex items-center gap-x-1 text-2xl font-bold leading-6 tracking-tighter">
+                <ChevronLeftIcon className="mr-2 flex-none text-gray-400" />
+                <span>
+                  {" "}
+                  Back to
+                  <span className="font-extrabold tracking-normal text-teal-300">
+                    {" "}
+                    MyCartage{" "}
+                  </span>
+                  Home{" "}
+                </span>
+              </span>
+              <span className="sr-only">homepage</span>
+            </Link>
+          </div>
           <div className="pb-16 pt-20 sm:pb-20 sm:pt-32 lg:py-20">
             <div className="relative">{main}</div>
           </div>
@@ -98,7 +121,7 @@ export function Layout({ children }: LayoutProps) {
       <FixedSidebar main={<Intro />} footer={<IntroFooter />} />
       <div className="relative flex-auto">
         <Timeline />
-        <main className="space-y-20 py-20 sm:space-y-32 sm:py-32">
+        <main className="space-y-20 bg-slate-950 py-20 text-zinc-300 sm:space-y-32 sm:py-32">
           {children}
         </main>
       </div>
