@@ -55,7 +55,9 @@ const products = [
     icon: BuildingLibraryIcon,
   },
 ];
-const callsToAction = [{ name: "Contact sales", href: "#", icon: PhoneIcon }];
+const callsToAction = [
+  { name: "Contact sales", href: "https://app.mycartage.com", icon: PhoneIcon },
+];
 const company = [
   {
     name: "About us",
