@@ -15,10 +15,10 @@ export const CallToAction: FC = () => {
       </div>
       <Container className="relative">
         <div className="mx-auto max-w-md sm:text-center">
-          <h2 className="text-3xl font-medium tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-medium tracking-tight text-zinc-100 sm:text-4xl">
             Sign up and look around
           </h2>
-          <p className="mt-4 text-lg text-gray-300">
+          <p className="mt-4 text-lg text-zinc-200">
             No credit card required. Create a free account and start using
             MyCartage in seconds.
           </p>

@@ -62,13 +62,13 @@ export function PrimaryFeatures() {
     >
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Everything you need to run your trucking operation.
+          <h2 className="font-display mt-8 text-5xl font-extrabold tracking-tight text-zinc-100 sm:text-6xl">
+            GPS Check... Only what you need
           </h2>
-          <p className="mt-6 text-lg tracking-tight text-slate-100">
-            This is a full fledged TMS for trucking companies. We cover
-            everything from dispatching to invoicing. We even have a mobile app
-            for drivers.
+          <p className="mt-6 text-lg tracking-tight text-zinc-200">
+            We are just building the features you want. This is a full fledged
+            TMS for trucking companies. We cover everything from dispatching to
+            invoicing. We even have a mobile app for drivers.
           </p>
         </div>
         <Tab.Group
@@ -96,7 +96,7 @@ export function PrimaryFeatures() {
                             "font-display text-lg [&:not(:focus-visible)]:focus:outline-none",
                             selectedIndex === featureIndex
                               ? "text-slate-600 lg:text-white"
-                              : "text-slate-100 hover:text-white lg:text-white",
+                              : "text-zinc-200 hover:text-white lg:text-white",
                           )}
                         >
                           <span className="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-xl" />
@@ -108,7 +108,7 @@ export function PrimaryFeatures() {
                           "mt-2 hidden text-sm lg:block",
                           selectedIndex === featureIndex
                             ? "text-white"
-                            : "text-slate-100 group-hover:text-white",
+                            : "text-zinc-200 group-hover:text-white",
                         )}
                       >
                         {feature.description}

@@ -25,7 +25,7 @@ export const h2 = function H2(props: React.HTMLAttributes<HTMLHeadingElement>) {
 export const h3 = function H3(props: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h2
-      className="text-2xl tracking-tight text-zinc-200 sm:text-2xl"
+      className="text-2xl font-extrabold tracking-tight text-zinc-200 sm:text-2xl"
       {...props}
     />
   );
@@ -53,7 +53,7 @@ interface ImageProps {
 
 export const img = function Img(props: ImageProps) {
   return (
-    <div className="relative mt-8 overflow-hidden rounded-xl [&+*]:mt-8">
+    <div className="relative mx-auto mt-8 w-3/4 overflow-hidden rounded-xl [&+*]:mt-8">
       <Image
         alt=""
         sizes="(min-width: 1280px) 36rem, (min-width: 1024px) 45vw, (min-width: 640px) 32rem, 95vw"

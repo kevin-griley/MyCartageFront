@@ -13,6 +13,7 @@ import {
   TableCellsIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { AnimatePresence, motion } from "framer-motion";
 
 import MyCartageLogo from "~/images/logos/MyCartage-logo.png";
 
@@ -81,6 +82,7 @@ const company = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <header className="bg-gray-50">
@@ -110,16 +112,35 @@ export function Header() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
+
         <Popover.Group className="z-20 hidden lg:flex lg:gap-x-12">
-          <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+          <Popover
+            className="relative"
+            onMouseEnter={() => setHoveredIndex(0)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <AnimatePresence>
+              {hoveredIndex === 0 && (
+                <motion.span
+                  className="absolute inset-0 rounded-lg bg-slate-100"
+                  layoutId="hoverBackground"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.15 } }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                />
+              )}
+            </AnimatePresence>
+
+            <Popover.Button className="relative flex items-center gap-x-1 p-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]">
               Features
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
               />
             </Popover.Button>
-
             <Transition
               as={Fragment}
               enter="transition ease-out duration-200"
@@ -138,7 +159,7 @@ export function Header() {
                     >
                       <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                         <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                          className="h-6 w-6 text-gray-600 group-hover:text-teal-600"
                           aria-hidden="true"
                         />
                       </div>
@@ -174,15 +195,32 @@ export function Header() {
             </Transition>
           </Popover>
 
-          <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+          <Popover
+            className="relative"
+            onMouseEnter={() => setHoveredIndex(1)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <AnimatePresence>
+              {hoveredIndex === 1 && (
+                <motion.span
+                  className="absolute inset-0 rounded-lg bg-slate-100"
+                  layoutId="hoverBackground"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.15 } }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                />
+              )}
+            </AnimatePresence>
+            <Popover.Button className="relative flex items-center gap-x-1 p-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]">
               Company
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
               />
             </Popover.Button>
-
             <Transition
               as={Fragment}
               enter="transition ease-out duration-200"
@@ -216,16 +254,48 @@ export function Header() {
 
           <Link
             href="/#pricing"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="relative p-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]"
+            onMouseEnter={() => setHoveredIndex(2)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
-            Pricing
+            <AnimatePresence>
+              {hoveredIndex === 2 && (
+                <motion.span
+                  className="absolute inset-0 rounded-lg bg-slate-100"
+                  layoutId="hoverBackground"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.15 } }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                />
+              )}
+            </AnimatePresence>
+            <span className="relative z-10">Pricing</span>
           </Link>
 
           <Link
             href="/#FAQ"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="relative p-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]"
+            onMouseEnter={() => setHoveredIndex(3)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
-            FAQs
+            <AnimatePresence>
+              {hoveredIndex === 3 && (
+                <motion.span
+                  className="absolute inset-0 rounded-lg bg-slate-100"
+                  layoutId="hoverBackground"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.15 } }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                />
+              )}
+            </AnimatePresence>
+            <span className="relative z-10">FAQs</span>
           </Link>
         </Popover.Group>
 
