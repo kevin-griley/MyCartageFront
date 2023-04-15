@@ -97,7 +97,7 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({ id, feat }) => {
     <header className="relative mb-10 xl:mb-0">
       <div className="pointer-events-none absolute left-[max(-0.5rem,calc(50%-18.625rem))] top-0 z-50 flex h-4 items-center justify-end gap-x-2 lg:left-0 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem] xl:h-8">
         <Link href={`#${id}`} className="inline-flex">
-          <p className="xl:text-2xs/4 hidden xl:pointer-events-auto xl:block xl:font-medium xl:text-white/50">
+          <p className="xl:text-2xs/4 hidden xl:pointer-events-auto xl:block xl:font-medium xl:text-zinc-400">
             {" "}
             {feat}{" "}
           </p>
@@ -107,8 +107,8 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({ id, feat }) => {
       <ContentWrapper>
         <div className="flex">
           <Link href={`#${id}`} className="inline-flex">
-            <p className="text-2xs/4 font-medium text-gray-500 dark:text-white/50 xl:hidden">
-              {id}
+            <p className="text-2xs/4 font-medium text-zinc-400 dark:text-white/50 xl:hidden">
+              {feat}
             </p>
           </Link>
         </div>

@@ -21,16 +21,16 @@ export function Intro() {
           <Image src={Logo} alt="MyCartage-logo" width={400} height={100} />
         </Link>
       </div>
-      <h1 className="font-display mt-14 text-4xl/tight font-light text-white">
+      <h1 className="font-display mt-14 text-4xl/tight font-medium text-zinc-100">
         Airfreight Trucking TMS
       </h1>
       <h1 className="font-display text-4xl/tight font-light text-teal-300">
         GPS Focused Solutions
       </h1>
-      <h1 className="font-display text-3xl/tight font-light text-white">
+      <h1 className="font-display text-3xl/tight font-light text-zinc-100">
         Next Generation Technology
       </h1>
-      <p className="mt-4 text-sm/6 text-gray-300">
+      <p className="mt-4 text-sm/6 text-zinc-200">
         MyCartage is a cloud-based TMS that provides a complete solution for
         airfreight trucking companies. We provide a GPS focused solution to
         manage your fleet, drivers, and shipments. Our technology is designed to
@@ -55,7 +55,7 @@ export function Intro() {
       <div className="mt-10 flex items-center justify-center gap-x-6">
         <Link
           href="https://app.mycartage.com"
-          className="rounded-md bg-zinc-100 px-20 py-2.5 text-sm font-semibold text-slate-950 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="rounded-md bg-zinc-100 px-20 py-2.5 text-sm font-semibold text-slate-950 shadow-sm hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           Get started
         </Link>

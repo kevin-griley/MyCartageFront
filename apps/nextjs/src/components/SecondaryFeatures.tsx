@@ -116,7 +116,7 @@ const Feature: FC<FeatureProps> = ({
 }) => {
   return (
     <div
-      className={clsx(className, !isActive && "opacity-75 hover:opacity-100")}
+      className={clsx(className, !isActive && "opacity-80 hover:opacity-100")}
       {...props}
     >
       <div
@@ -132,7 +132,7 @@ const Feature: FC<FeatureProps> = ({
       <h3
         className={clsx(
           "mt-6 text-sm font-medium",
-          isActive ? "text-teal-600" : "text-slate-600",
+          isActive ? "text-teal-700" : "text-slate-600",
         )}
       >
         {feature.name as string}
