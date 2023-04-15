@@ -28,7 +28,7 @@ const Plan: FC<PlanProps> = ({
       )}
     >
       {featured && (
-        <div className="absolute inset-0 text-white/10 [mask-image:linear-gradient(white,transparent)]">
+        <div className="absolute inset-0 text-slate-950/10 [mask-image:linear-gradient(white,transparent)]">
           <GridPattern />
         </div>
       )}
@@ -73,8 +73,8 @@ const Plan: FC<PlanProps> = ({
             className={clsx(
               "-my-2 divide-y text-base tracking-tight",
               featured
-                ? "divide-white/50 text-slate-900"
-                : "divide-slate-200 text-slate-900",
+                ? "divide-slate-50/10 text-slate-900"
+                : "divide-slate-300 text-slate-900",
             )}
           >
             {features.map((feature) => (
@@ -114,7 +114,7 @@ export function Pricing() {
         </p>
       </Container>
       <div className="mx-auto mt-16 max-w-5xl lg:px-6">
-        <div className="md:rounded-6xl grid bg-slate-100 sm:px-6 sm:pb-16 md:grid-cols-2 md:px-8 md:pt-16 lg:p-20">
+        <div className="md:rounded-6xl grid bg-slate-200 sm:px-6 sm:pb-16 md:grid-cols-2 md:px-8 md:pt-16 lg:p-20">
           <Plan
             featured
             name="/ Per Active User Monthly*"
