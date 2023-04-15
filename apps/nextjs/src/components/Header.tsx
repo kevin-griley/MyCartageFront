@@ -32,8 +32,7 @@ const products = [
   },
   {
     name: "Security",
-    description:
-      "Your data will be safe and secure. Auth managed by Azure Active Directory",
+    description: "Auth managed by Azure Active Directory",
     href: "/features#advanced-security",
     icon: FingerPrintIcon,
   },
@@ -82,7 +81,14 @@ const company = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndexFeatures, setHoveredIndexFeatures] = useState<
+    number | null
+  >(null);
+  const [hoveredIndexCompany, setHoveredIndexCompany] = useState<number | null>(
+    null,
+  );
 
   return (
     <header className="bg-gray-50">
@@ -152,12 +158,32 @@ export function Header() {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                  {products.map((item) => (
+                  {products.map((item, index) => (
                     <div
                       key={item.name}
-                      className="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                      className="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6"
+                      onMouseEnter={() => setHoveredIndexFeatures(index)}
+                      onMouseLeave={() => setHoveredIndexFeatures(null)}
                     >
-                      <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                      <AnimatePresence>
+                        {hoveredIndexFeatures === index && (
+                          <motion.span
+                            className="absolute inset-0 -z-10 rounded-lg bg-slate-100 "
+                            layoutId="hoverBackground2"
+                            initial={{ opacity: 0 }}
+                            animate={{
+                              opacity: 1,
+                              transition: { duration: 0 },
+                            }}
+                            exit={{
+                              opacity: 0,
+                              transition: { duration: 0, delay: 0 },
+                            }}
+                          />
+                        )}
+                      </AnimatePresence>
+
+                      <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-slate-100 ">
                         <item.icon
                           className="h-6 w-6 text-gray-600 group-hover:text-teal-600"
                           aria-hidden="true"
@@ -176,12 +202,12 @@ export function Header() {
                     </div>
                   ))}
                 </div>
-                <div className="grid grid-cols-1 divide-x divide-gray-900/5 bg-gray-50">
+                <div className="grid grid-cols-1 divide-x divide-gray-900/5 bg-slate-100">
                   {callsToAction.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-slate-200"
                     >
                       <item.icon
                         className="h-5 w-5 flex-none text-gray-400"
@@ -231,11 +257,31 @@ export function Header() {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-96 rounded-3xl bg-white p-4 shadow-lg ring-1 ring-gray-900/5">
-                {company.map((item) => (
+                {company.map((item, index) => (
                   <div
                     key={item.name}
-                    className="relative rounded-lg p-4 hover:bg-gray-50"
+                    className="relative rounded-lg p-4"
+                    onMouseEnter={() => setHoveredIndexCompany(index)}
+                    onMouseLeave={() => setHoveredIndexCompany(null)}
                   >
+                    <AnimatePresence>
+                      {hoveredIndexCompany === index && (
+                        <motion.span
+                          className="absolute inset-0 -z-10 rounded-lg bg-slate-100 "
+                          layoutId="hoverBackground3"
+                          initial={{ opacity: 0 }}
+                          animate={{
+                            opacity: 1,
+                            transition: { duration: 0 },
+                          }}
+                          exit={{
+                            opacity: 0,
+                            transition: { duration: 0, delay: 0 },
+                          }}
+                        />
+                      )}
+                    </AnimatePresence>
+
                     <Link
                       href={item.href}
                       className="block text-sm font-semibold leading-6 text-gray-900"
@@ -343,11 +389,11 @@ export function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base font-semibold leading-7 text-gray-900 hover:bg-slate-100"
                     >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-slate-100">
                         <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                          className="h-6 w-6 text-gray-600 group-hover:text-teal-600"
                           aria-hidden="true"
                         />
                       </div>
@@ -358,13 +404,13 @@ export function Header() {
                 <div className="space-y-2 py-6">
                   <Link
                     href="/#features"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-slate-100"
                   >
                     Industry
                   </Link>
                   <Link
                     href="/#pricing"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-slate-100"
                   >
                     Pricing
                   </Link>
@@ -373,7 +419,7 @@ export function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-slate-100"
                     >
                       {item.name}
                     </Link>
@@ -382,7 +428,7 @@ export function Header() {
                 <div className="py-6">
                   <Link
                     href="https://app.mycartage.com"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-slate-100"
                   >
                     Log in
                   </Link>
@@ -390,12 +436,12 @@ export function Header() {
               </div>
             </div>
           </div>
-          <div className="sticky bottom-0 grid grid-cols-1 divide-x divide-gray-900/5 bg-gray-50 text-center">
+          <div className="sticky bottom-0 grid grid-cols-1 divide-x divide-gray-900/5 bg-slate-100 text-center">
             {callsToAction.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="p-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-100"
+                className="p-3 text-base font-semibold leading-7 text-gray-900 hover:bg-slate-200"
               >
                 {item.name}
               </Link>
