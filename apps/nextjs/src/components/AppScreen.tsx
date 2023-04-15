@@ -94,7 +94,7 @@ export const AppScreen: React.FC<AppScreenProps> & {
 export const AppScreenHeader = forwardRef<HTMLDivElement, AppScreenHeaderProps>(
   ({ children, ...props }, ref) => {
     return (
-      <div ref={ref} className="mt-6 px-4 text-white" {...props}>
+      <div ref={ref} className="mt-6 px-4 text-zinc-100" {...props}>
         {children}
       </div>
     );
@@ -105,7 +105,7 @@ AppScreenHeader.displayName = "AppScreenHeader";
 export const AppScreenTitle = forwardRef<HTMLDivElement, AppScreenTitleProps>(
   ({ children, ...props }, ref) => {
     return (
-      <div ref={ref} className="text-2xl text-white" {...props}>
+      <div ref={ref} className="text-2xl text-zinc-100" {...props}>
         {children}
       </div>
     );
@@ -130,7 +130,7 @@ export const AppScreenBody = forwardRef<HTMLDivElement, AppScreenBodyProps>(
     return (
       <div
         ref={ref}
-        className={clsx("mt-6 flex-auto rounded-t-2xl bg-white", className)}
+        className={clsx("mt-6 flex-auto rounded-t-2xl bg-zinc-50", className)}
         {...props}
       >
         {children}

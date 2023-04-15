@@ -17,7 +17,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "group relative rounded-lg border border-slate-200 bg-white p-6 shadow-md transition-shadow hover:shadow-lg",
+        "group relative rounded-lg border border-slate-200 bg-zinc-50 p-6 shadow-md transition-shadow hover:shadow-lg",
         disabled && "cursor-not-allowed opacity-60",
         className,
       )}

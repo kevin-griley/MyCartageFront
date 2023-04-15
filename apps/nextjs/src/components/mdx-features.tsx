@@ -107,7 +107,7 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({ id, feat }) => {
       <ContentWrapper>
         <div className="flex">
           <Link href={`#${id}`} className="inline-flex">
-            <p className="text-2xs/4 font-medium text-zinc-400 dark:text-white/50 xl:hidden">
+            <p className="text-2xs/4 font-medium text-zinc-400 dark:text-zinc-100/50 xl:hidden">
               {feat}
             </p>
           </Link>

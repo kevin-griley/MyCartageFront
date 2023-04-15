@@ -87,7 +87,7 @@ const AppDemo: FC = () => {
               height={300}
               className="rounded-lg"
             />
-            <div className="mt-4 rounded-lg bg-teal-500 px-4 py-2 text-center text-sm font-semibold text-white">
+            <div className="mt-4 rounded-lg bg-teal-500 px-4 py-2 text-center text-sm font-semibold text-zinc-100">
               LET&apos;S BOOST AHEAD
             </div>
             <div className="mt-3 divide-y divide-gray-100 text-sm">

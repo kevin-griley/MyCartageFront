@@ -62,7 +62,7 @@ function Glow() {
           className="lg:hidden"
         />
       </svg>
-      <div className="absolute inset-x-0 bottom-0 right-0 h-px bg-white mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px" />
+      <div className="absolute inset-x-0 bottom-0 right-0 h-px bg-zinc-50 mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px" />
     </div>
   );
 }

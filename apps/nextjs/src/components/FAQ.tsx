@@ -35,7 +35,7 @@ export function FAQ() {
       <div className="bg-gradient-to-r from-slate-900 from-10% via-slate-950 via-30% to-slate-900 to-90%">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
           <div className="mx-auto max-w-4xl divide-y divide-white/10">
-            <h2 className="text-2xl font-bold leading-10 tracking-tight text-white">
+            <h2 className="text-2xl font-bold leading-10 tracking-tight text-zinc-100">
               Frequently asked questions
             </h2>
             <dl className="mt-10 space-y-6 divide-y divide-white/10">
@@ -44,7 +44,7 @@ export function FAQ() {
                   {({ open }) => (
                     <>
                       <dt>
-                        <Disclosure.Button className="flex w-full items-start justify-between text-left text-white">
+                        <Disclosure.Button className="flex w-full items-start justify-between text-left text-zinc-200">
                           <span className="text-base font-semibold leading-7">
                             {faq.question}
                           </span>
@@ -64,7 +64,7 @@ export function FAQ() {
                         </Disclosure.Button>
                       </dt>
                       <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                        <p className="text-base leading-7 text-gray-300">
+                        <p className="text-base leading-7 text-zinc-300">
                           {faq.answer}
                         </p>
                       </Disclosure.Panel>
