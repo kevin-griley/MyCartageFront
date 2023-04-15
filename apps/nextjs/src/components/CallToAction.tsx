@@ -11,7 +11,7 @@ export const CallToAction: FC = () => {
       className="relative overflow-hidden bg-gradient-to-r from-slate-900 from-10% via-slate-950 via-30% to-slate-900 to-90% py-20 sm:py-28"
     >
       <div className="absolute left-20 top-1/2 -translate-y-1/2 sm:left-1/2 sm:-translate-x-1/2">
-        <CircleBackground color="#fff" className="animate-spin-slower" />
+        <CircleBackground color="#fff" className="animate-spin-slow" />
       </div>
       <Container className="relative">
         <div className="mx-auto max-w-md sm:text-center">

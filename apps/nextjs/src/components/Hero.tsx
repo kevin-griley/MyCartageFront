@@ -26,7 +26,7 @@ const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
     <div {...props}>
       <CircleBackground
         color="#D4D4D4"
-        className="animate-spin-slower absolute inset-0 m-auto"
+        className="animate-spin-slow absolute inset-0 m-auto"
         height={1000}
         width={1000}
         opacity={0.5}
@@ -34,7 +34,7 @@ const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
 
       <CircleBackground
         color="#D4D4D4"
-        className="animate-spin-slower absolute inset-0 m-auto"
+        className="animate-spin-slow absolute inset-0 m-auto"
         height={850}
         width={850}
         opacity={0.5}
@@ -42,7 +42,7 @@ const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
 
       <CircleBackground
         color="#D4D4D4"
-        className="animate-spin-slower absolute inset-0 m-auto  hidden sm:block"
+        className="animate-spin-slow absolute inset-0 m-auto  hidden sm:block"
         height={700}
         width={700}
         opacity={0.5}
@@ -50,7 +50,7 @@ const BackgroundIllustration: React.FC<BackgroundIllustrationProps> = (
 
       <CircleBackground
         color="#D4D4D4"
-        className="animate-spin-slower absolute inset-0 m-auto hidden lg:block"
+        className="animate-spin-slow absolute inset-0 m-auto hidden lg:block"
         height={550}
         width={550}
         opacity={0.5}
