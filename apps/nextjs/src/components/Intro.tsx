@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Coins, Factory, HelpCircle } from "lucide-react";
@@ -14,6 +15,8 @@ function BookIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export function Intro() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <>
       <div>
@@ -38,16 +41,48 @@ export function Intro() {
       </p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
-        <IconLink href="/docs" icon={BookIcon} className="flex-none">
+        <IconLink
+          href="/docs"
+          icon={BookIcon}
+          className="flex-none"
+          hoveredIndex={hoveredIndex}
+          index={0}
+          onMouseEnter={() => setHoveredIndex(0)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
           Docs
         </IconLink>
-        <IconLink href="/#pricing" icon={Coins} className="flex-none">
+        <IconLink
+          href="/#pricing"
+          icon={Coins}
+          className="flex-none"
+          hoveredIndex={hoveredIndex}
+          index={1}
+          onMouseEnter={() => setHoveredIndex(1)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
           Pricing
         </IconLink>
-        <IconLink href="/about" icon={Factory} className="flex-none">
+        <IconLink
+          href="/about"
+          icon={Factory}
+          className="flex-none"
+          hoveredIndex={hoveredIndex}
+          index={2}
+          onMouseEnter={() => setHoveredIndex(2)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
           About
         </IconLink>
-        <IconLink href="/#FAQ" icon={HelpCircle} className="flex-none">
+        <IconLink
+          href="/#FAQ"
+          icon={HelpCircle}
+          className="flex-none"
+          hoveredIndex={hoveredIndex}
+          index={3}
+          onMouseEnter={() => setHoveredIndex(3)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
           FAQs
         </IconLink>
       </div>
@@ -68,7 +103,14 @@ export function IntroFooter() {
   return (
     <p className="flex items-baseline gap-x-2 text-[0.8125rem]/6 text-gray-500">
       &copy; Copyright {new Date().getFullYear()}. All rights reserved.{" "}
-      <IconLink href="/" icon={"/favicon.ico"} compact large>
+      <IconLink
+        href="/"
+        icon={"/favicon.ico"}
+        compact
+        large
+        hoveredIndex={null}
+        index={0}
+      >
         MyCartage
       </IconLink>
     </p>

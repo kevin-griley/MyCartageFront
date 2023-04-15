@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { Container } from "~/components/Container";
 import screenshotVatReturns from "~/images/screenshots/photoFour.png";
@@ -38,6 +39,7 @@ const features = [
 
 export function PrimaryFeatures() {
   const [tabOrientation, setTabOrientation] = useState("horizontal");
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const lgMediaQuery = window.matchMedia("(min-width: 1024px)");
@@ -73,23 +75,43 @@ export function PrimaryFeatures() {
         </div>
         <Tab.Group
           as="div"
-          className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
+          className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:mx-6 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
           vertical={tabOrientation === "vertical"}
         >
           {({ selectedIndex }) => (
             <>
-              <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
+              <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-hidden sm:pb-0 lg:col-span-5">
                 <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
                   {features.map((feature, featureIndex) => (
                     <div
                       key={feature.title}
                       className={clsx(
                         "group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-xl lg:p-6",
-                        selectedIndex === featureIndex
-                          ? "bg-zinc-50 lg:bg-zinc-50/10 lg:ring-1 lg:ring-inset lg:ring-white/10"
-                          : "hover:bg-zinc-50/10 lg:hover:bg-zinc-50/5",
+                        selectedIndex === featureIndex &&
+                          "bg-zinc-50/10 lg:bg-zinc-50/10 lg:ring-1 lg:ring-inset lg:ring-white/10",
                       )}
+                      onMouseEnter={() => setHoveredIndex(featureIndex)}
+                      onMouseLeave={() => setHoveredIndex(null)}
                     >
+                      <AnimatePresence>
+                        {selectedIndex !== featureIndex &&
+                          hoveredIndex === featureIndex && (
+                            <motion.span
+                              className="absolute inset-0 -z-10 rounded-lg bg-zinc-50/5"
+                              layoutId="hoverBackground"
+                              initial={{ opacity: 0 }}
+                              animate={{
+                                opacity: 1,
+                                transition: { duration: 0.15 },
+                              }}
+                              exit={{
+                                opacity: 0,
+                                transition: { duration: 0.15, delay: 0.2 },
+                              }}
+                            />
+                          )}
+                      </AnimatePresence>
+
                       <h3>
                         <Tab
                           className={clsx(
@@ -126,7 +148,7 @@ export function PrimaryFeatures() {
                         {feature.description}
                       </p>
                     </div>
-                    <div className="mt-10 w-[45rem] overflow-hidden rounded-xl sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+                    <div className="mt-10 w-[45rem] overflow-hidden rounded-xl sm:-mx-14 sm:w-screen lg:mt-0 lg:w-[67.8125rem]">
                       <Image
                         className="w-full"
                         src={feature.image}

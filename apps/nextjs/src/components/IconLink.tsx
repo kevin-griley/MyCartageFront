@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface IconLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  hoveredIndex: number | null;
+  index: number;
   href: string;
   className?: string;
   compact?: boolean;
@@ -11,6 +14,8 @@ interface IconLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 export function IconLink({
+  hoveredIndex,
+  index,
   href,
   children,
   className,
@@ -29,7 +34,22 @@ export function IconLink({
         compact ? "gap-x-2" : "gap-x-3",
       )}
     >
-      <span className="absolute inset-0 -z-10 scale-75 rounded-lg bg-zinc-50/5 opacity-0 transition group-hover:scale-100 group-hover:opacity-100" />
+      <span className="absolute inset-0 -z-10 scale-75 rounded-lg bg-zinc-50/5 opacity-0 transition" />
+
+      <AnimatePresence>
+        {hoveredIndex === index && (
+          <motion.span
+            className="absolute inset-0 rounded-lg bg-slate-100/10"
+            layoutId="hoverBackground"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.15 } }}
+            exit={{
+              opacity: 0,
+              transition: { duration: 0.15, delay: 0.2 },
+            }}
+          />
+        )}
+      </AnimatePresence>
 
       {typeof Icon === "string" ? (
         <Image
