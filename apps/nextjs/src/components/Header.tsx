@@ -113,7 +113,7 @@ export function Header() {
           </button>
         </div>
 
-        <Popover.Group className="z-20 hidden lg:flex lg:gap-x-12">
+        <Popover.Group className="z-20 hidden lg:flex lg:gap-x-8">
           <Popover
             className="relative"
             onMouseEnter={() => setHoveredIndex(0)}
@@ -134,7 +134,7 @@ export function Header() {
               )}
             </AnimatePresence>
 
-            <Popover.Button className="relative flex items-center gap-x-1 p-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]">
+            <Popover.Button className="relative flex items-center gap-x-1 px-3 py-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]">
               Features
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
@@ -214,7 +214,7 @@ export function Header() {
                 />
               )}
             </AnimatePresence>
-            <Popover.Button className="relative flex items-center gap-x-1 p-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]">
+            <Popover.Button className="relative flex items-center gap-x-1 px-3 py-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]">
               Company
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
@@ -254,7 +254,7 @@ export function Header() {
 
           <Link
             href="/#pricing"
-            className="relative p-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]"
+            className="relative px-3 py-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]"
             onMouseEnter={() => setHoveredIndex(2)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -277,7 +277,7 @@ export function Header() {
 
           <Link
             href="/#FAQ"
-            className="relative p-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]"
+            className="relative px-3 py-2 leading-6 text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]"
             onMouseEnter={() => setHoveredIndex(3)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
