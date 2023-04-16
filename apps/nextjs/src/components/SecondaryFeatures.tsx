@@ -235,14 +235,14 @@ export function SecondaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display mt-8 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-            Let&apos;s go digital!
+            Is Turnover a Problem?
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            We are a team of developers who are passionate about building great
-            products. Simplify your business processes with MyCartage.
-            Collecting and sharing data has never been easier. Let us help you
-            generate detailed reports and analytics to help you make better
-            business decisions during the moment of truth.
+            One of the main reasons for employee unhappiness is bad
+            communication. We can help you fix that. With Customer Access
+            Portal, Automation Dispatch Alerts, and Advanced Integration
+            Features, your employees will be able to communicate with each
+            other, the customers and the drivers effortlessly.
           </p>
         </div>
         <FeaturesMobile />
