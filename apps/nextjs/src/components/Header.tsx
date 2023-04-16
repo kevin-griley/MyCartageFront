@@ -183,9 +183,9 @@ export function Header() {
                         )}
                       </AnimatePresence>
 
-                      <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-slate-100 ">
+                      <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-slate-100 group-hover:bg-zinc-50">
                         <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-teal-600"
+                          className="h-6 w-6 text-gray-600  group-hover:text-teal-600"
                           aria-hidden="true"
                         />
                       </div>
