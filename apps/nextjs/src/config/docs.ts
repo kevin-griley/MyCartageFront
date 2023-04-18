@@ -16,23 +16,23 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Introduction",
-          href: "/docs/documentation/basics",
+          href: "/docs/basics",
         },
         {
           title: "Migrating your TMS",
-          href: "/docs/documentation/migrating-your-tms",
+          href: "/docs/migrating-your-tms",
         },
         {
           title: "Customer Portals",
-          href: "/docs/documentation/customer-portals",
+          href: "/docs/customer-portals",
         },
         {
           title: "Data Protection",
-          href: "/docs/documentation/data-protection",
+          href: "/docs/data-protection",
         },
         {
           title: "API & Webhooks",
-          href: "/docs/documentation/api-and-webhooks",
+          href: "/docs/api-and-webhooks",
         },
       ],
     },
@@ -41,12 +41,12 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Introduction",
-          href: "/docs/documentation/accounts",
+          href: "/docs/accounts",
           disabled: true,
         },
         {
           title: "Updating your account",
-          href: "/docs/documentation/updating-your-account",
+          href: "/docs/updating-your-account",
           disabled: true,
         },
       ],
@@ -56,22 +56,22 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Introduction",
-          href: "/docs/documentation/businesses",
+          href: "/docs/businesses",
           disabled: true,
         },
         {
           title: "Creating a business",
-          href: "/docs/documentation/creating-a-business",
+          href: "/docs/creating-a-business",
           disabled: true,
         },
         {
           title: "Joining a business",
-          href: "/docs/documentation/joining-a-business",
+          href: "/docs/joining-a-business",
           disabled: true,
         },
         {
           title: "Modify a subscription",
-          href: "/docs/documentation/modify-a-subscription",
+          href: "/docs/modify-a-subscription",
           disabled: true,
         },
       ],
@@ -81,22 +81,22 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Introduction",
-          href: "/docs/documentation/business-users",
+          href: "/docs/business-users",
           disabled: true,
         },
         {
           title: "Inviting a user",
-          href: "/docs/documentation/inviting-a-user",
+          href: "/docs/inviting-a-user",
           disabled: true,
         },
         {
           title: "Setting user roles",
-          href: "/docs/documentation/setting-user-roles",
+          href: "/docs/setting-user-roles",
           disabled: true,
         },
         {
           title: "Giving customer access",
-          href: "/docs/documentation/giving-customer-access",
+          href: "/docs/giving-customer-access",
           disabled: true,
         },
       ],
@@ -106,12 +106,12 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Introduction",
-          href: "/docs/documentation/departments",
+          href: "/docs/departments",
           disabled: true,
         },
         {
           title: "Creating a department",
-          href: "/docs/documentation/creating-a-department",
+          href: "/docs/creating-a-department",
           disabled: true,
         },
       ],
@@ -121,12 +121,12 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Introduction",
-          href: "/docs/documentation/motor-carriers",
+          href: "/docs/motor-carriers",
           disabled: true,
         },
         {
           title: "Adding a carrier",
-          href: "/docs/documentation/adding-a-carrier",
+          href: "/docs/adding-a-carrier",
           disabled: true,
         },
       ],
