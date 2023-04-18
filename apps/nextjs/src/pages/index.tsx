@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import { CallToAction } from "~/components/CallToAction";
+import Content from "~/components/Content";
 import { FAQ } from "~/components/FAQ";
 import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
@@ -24,7 +25,9 @@ const Home: NextPage = () => {
         <Hero />
         <PrimaryFeatures />
         <SecondaryFeatures />
+
         <CallToAction />
+        <Content />
         <Pricing />
         <FAQ />
       </main>
