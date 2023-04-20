@@ -35,7 +35,7 @@ const SocialLink: FC<SocialLinkProps> = ({
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <Icon className="h-6 w-6 flex-none fill-teal-500 transition group-hover:fill-teal-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -161,7 +161,7 @@ export default function About() {
                   )}
                 >
                   <li className="flex">
-                    <CheckIcon className={"text-zinc-600"} />
+                    <CheckIcon className={"text-teal-600"} />
                     <span className="ml-4">
                       <b>Innovation:</b> We&apos;re always pushing the
                       boundaries of what&apos;s possible, using the latest
@@ -169,7 +169,7 @@ export default function About() {
                     </span>
                   </li>
                   <li className="flex">
-                    <CheckIcon className={"text-zinc-600"} />
+                    <CheckIcon className={"text-teal-600"} />
                     <span className="ml-4">
                       <b>Simplicity:</b> We believe that software should be easy
                       to use and understand, even for people without technical
@@ -177,14 +177,14 @@ export default function About() {
                     </span>
                   </li>
                   <li className="flex">
-                    <CheckIcon className={"text-zinc-600"} />
+                    <CheckIcon className={"text-teal-600"} />
                     <span className="ml-4">
                       <b>Quality:</b> We&apos;re obsessed with quality, from the
                       code we write to the support we provide.
                     </span>
                   </li>
                   <li className="flex">
-                    <CheckIcon className={"text-zinc-600"} />
+                    <CheckIcon className={"text-teal-600"} />
                     <span className="ml-4">
                       <b>Customer Focus:</b> Our customers are at the heart of
                       everything we do. We listen to their feedback, anticipate
