@@ -25,7 +25,6 @@ const Home: NextPage = () => {
         <Hero />
         <PrimaryFeatures />
         <SecondaryFeatures />
-
         <CallToAction />
         <Content />
         <Pricing />
