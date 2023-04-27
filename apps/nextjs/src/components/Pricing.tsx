@@ -1,5 +1,6 @@
-import { type FC } from "react";
+import { useRef, type FC } from "react";
 import clsx from "clsx";
+import { useInView } from "framer-motion";
 
 import { CheckIcon } from "~/components/CheckIcon";
 import { Container } from "~/components/Container";
@@ -96,6 +97,17 @@ const Plan: FC<PlanProps> = ({
 };
 
 export function Pricing() {
+  const ref = useRef(null);
+  const ref2 = useRef(null);
+
+  const isInView = useInView(ref, {
+    once: true,
+  });
+
+  const isInView2 = useInView(ref2, {
+    once: true,
+  });
+
   return (
     <section
       id="pricing"
@@ -106,14 +118,25 @@ export function Pricing() {
         <p className="font-display mt-8 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
           Simple, transparent pricing.
         </p>
-        <p className="mt-4 max-w-xl text-lg tracking-tight text-slate-600">
+        <p
+          ref={ref}
+          className="mt-4 max-w-xl text-lg tracking-tight text-slate-600"
+        >
           We believe in transparency and simplicity. Get all the current
           features for a low monthly fee.
           <br />
           <b>Join now and get free migration from your current system!</b>
         </p>
       </Container>
-      <div className="mx-auto mt-16 max-w-5xl lg:px-6">
+      <div
+        ref={ref2}
+        style={{
+          transform: isInView || isInView2 ? "none" : "translateY(300px)",
+          opacity: isInView || isInView2 ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
+        className="mx-auto mt-16 max-w-5xl lg:px-6"
+      >
         <div className="md:rounded-6xl grid bg-slate-200 sm:px-6 sm:pb-16 md:grid-cols-2 md:px-8 md:pt-16 lg:p-20">
           <Plan
             featured

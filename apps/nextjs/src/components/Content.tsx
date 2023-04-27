@@ -1,16 +1,29 @@
+import { useRef } from "react";
 import Image from "next/image";
 import {
   CloudArrowUpIcon,
   LockClosedIcon,
   ServerIcon,
 } from "@heroicons/react/20/solid";
+import { useInView } from "framer-motion";
 
 import screenshotInventory from "~/images/screenshots/photoTwo.png";
 
 export default function Content() {
+  const ref = useRef(null);
+  const ref2 = useRef(null);
+
+  const isInView = useInView(ref, {
+    once: true,
+  });
+
+  const isInView2 = useInView(ref2, {
+    once: true,
+  });
+
   return (
     <div className="relative isolate overflow-hidden bg-gray-50 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      <div ref={ref} className="absolute inset-0 -z-10 overflow-hidden">
         <svg
           className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
           aria-hidden="true"
@@ -41,7 +54,15 @@ export default function Content() {
           />
         </svg>
       </div>
-      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+      <div
+        ref={ref2}
+        style={{
+          transform: isInView || isInView2 ? "none" : "translateY(300px)",
+          opacity: isInView || isInView2 ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
+        className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10"
+      >
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">

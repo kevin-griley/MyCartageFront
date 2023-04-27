@@ -1,7 +1,8 @@
-import { useId, type FC } from "react";
+import { useId, useRef, type FC } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
+import { useInView } from "framer-motion";
 
 import { Container } from "~/components/Container";
 import screenshotContacts from "~/images/screenshots/photoOne.png";
@@ -145,9 +146,26 @@ const Feature: FC<FeatureProps> = ({
   );
 };
 
-function FeaturesMobile() {
+interface FeaturesProps {
+  isInView: boolean;
+}
+
+function FeaturesMobile({ isInView }: FeaturesProps) {
+  const ref = useRef(null);
+  const isInView2 = useInView(ref, {
+    once: true,
+  });
+
   return (
-    <div className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
+    <div
+      ref={ref}
+      style={{
+        transform: isInView || isInView2 ? "none" : "translateY(300px)",
+        opacity: isInView || isInView2 ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      }}
+      className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden"
+    >
       {features.map((feature) => (
         <div key={feature.name as string}>
           <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
@@ -169,9 +187,23 @@ function FeaturesMobile() {
   );
 }
 
-function FeaturesDesktop() {
+function FeaturesDesktop({ isInView }: FeaturesProps) {
+  const ref = useRef(null);
+  const isInView2 = useInView(ref, {
+    once: true,
+  });
+
   return (
-    <Tab.Group as="div" className="hidden lg:mt-20 lg:block">
+    <Tab.Group
+      ref={ref}
+      style={{
+        transform: isInView || isInView2 ? "none" : "translateY(300px)",
+        opacity: isInView || isInView2 ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      }}
+      as="div"
+      className="hidden lg:mt-20 lg:block"
+    >
       {({ selectedIndex }) => (
         <>
           <Tab.List className="grid grid-cols-3 gap-x-8">
@@ -226,6 +258,11 @@ function FeaturesDesktop() {
 }
 
 export function SecondaryFeatures() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+  });
+
   return (
     <section
       id="secondary-features"
@@ -237,7 +274,7 @@ export function SecondaryFeatures() {
           <h2 className="font-display mt-8 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
             Is Turnover a Problem?
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
+          <p ref={ref} className="mt-4 text-lg tracking-tight text-slate-700">
             One of the main reasons for employee unhappiness is bad
             communication. We can help you fix that. With Customer Access
             Portal, Automation Dispatch Alerts, and Advanced Integration
@@ -245,8 +282,8 @@ export function SecondaryFeatures() {
             other, the customers and the drivers effortlessly.
           </p>
         </div>
-        <FeaturesMobile />
-        <FeaturesDesktop />
+        <FeaturesMobile isInView={isInView} />
+        <FeaturesDesktop isInView={isInView} />
       </Container>
     </section>
   );

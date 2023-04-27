@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { Tab } from "@headlessui/react";
+import { useMediaQuery } from "@mantine/hooks";
 import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 
 import { Container } from "~/components/Container";
 import screenshotVatReturns from "~/images/screenshots/photoFour.png";
@@ -38,23 +39,20 @@ const features = [
 ];
 
 export function PrimaryFeatures() {
-  const [tabOrientation, setTabOrientation] = useState("horizontal");
+  const matches = useMediaQuery("(min-width: 1024px)");
+  const tabOrientation = matches ? "vertical" : "horizontal";
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    const lgMediaQuery = window.matchMedia("(min-width: 1024px)");
+  const ref = useRef(null);
+  const ref2 = useRef(null);
 
-    function onMediaQueryChange({ matches }: { matches: boolean }) {
-      setTabOrientation(matches ? "vertical" : "horizontal");
-    }
+  const isInView = useInView(ref, {
+    once: true,
+  });
 
-    onMediaQueryChange(lgMediaQuery);
-    lgMediaQuery.addEventListener("change", onMediaQueryChange);
-
-    return () => {
-      lgMediaQuery.removeEventListener("change", onMediaQueryChange);
-    };
-  }, []);
+  const isInView2 = useInView(ref2, {
+    once: true,
+  });
 
   return (
     <section
@@ -67,13 +65,19 @@ export function PrimaryFeatures() {
           <h2 className="font-display mt-8 text-5xl font-extrabold tracking-tight text-zinc-100 sm:text-6xl">
             GPS Check... Only what you need
           </h2>
-          <p className="mt-6 text-lg tracking-tight text-zinc-200">
+          <p ref={ref} className="mt-6 text-lg tracking-tight text-zinc-200">
             We are just building the features you want. This is a full fledged
             TMS for trucking companies. We cover everything from dispatching to
             invoicing. We even have a mobile app for drivers.
           </p>
         </div>
         <Tab.Group
+          ref={ref2}
+          style={{
+            transform: isInView || isInView2 ? "none" : "translateY(300px)",
+            opacity: isInView || isInView2 ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
           as="div"
           className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:mx-6 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
           vertical={tabOrientation === "vertical"}
