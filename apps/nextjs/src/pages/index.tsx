@@ -28,7 +28,9 @@ const Home: NextPage = () => {
         <CallToAction />
         <Content />
         <Pricing />
-        <FAQ />
+        <div className="z-10">
+          <FAQ />
+        </div>
       </main>
       <Footer />
     </>
