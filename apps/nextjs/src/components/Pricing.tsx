@@ -28,11 +28,6 @@ const Plan: FC<PlanProps> = ({
         featured && "bg-teal-400 sm:shadow",
       )}
     >
-      {featured && (
-        <div className="absolute inset-0 text-slate-950/10 [mask-image:linear-gradient(white,transparent)]">
-          <GridPattern />
-        </div>
-      )}
       <div className="relative flex flex-col">
         <h3
           className={clsx(
@@ -112,8 +107,39 @@ export function Pricing() {
     <section
       id="pricing"
       aria-labelledby="pricing-title"
-      className="scroll-mt-14 pb-8 pt-16 sm:scroll-mt-32 sm:pb-10 lg:pb-16"
+      className="relative scroll-mt-14 pb-8 pt-16 sm:scroll-mt-32 sm:pb-10 lg:pb-16"
     >
+      <div ref={ref} className="absolute inset-0 -z-10 overflow-hidden">
+        <svg
+          className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern
+              id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+              width={200}
+              height={200}
+              x="50%"
+              y={-1}
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M100 200V.5M.5 .5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
+            <path
+              d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+              strokeWidth={0}
+            />
+          </svg>
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth={0}
+            fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+          />
+        </svg>
+      </div>
       <Container>
         <p className="font-display mt-8 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
           Simple, transparent pricing.
@@ -164,6 +190,37 @@ export function Pricing() {
             ]}
           />
         </div>
+      </div>
+      <div ref={ref} className="absolute inset-0 -z-10 overflow-hidden">
+        <svg
+          className="absolute bottom-0 left-[max(50%,25rem)] h-[64rem] w-[128rem] -translate-x-1/2 rotate-180 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern
+              id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+              width={200}
+              height={200}
+              x="50%"
+              y={-1}
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M100 200V.5M.5 .5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
+            <path
+              d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+              strokeWidth={0}
+            />
+          </svg>
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth={0}
+            fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+          />
+        </svg>
       </div>
     </section>
   );

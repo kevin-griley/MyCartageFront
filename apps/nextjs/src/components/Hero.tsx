@@ -1,4 +1,4 @@
-import { type FC } from "react";
+import { useRef, type FC } from "react";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { ArrowUpIcon, ChevronRightIcon } from "@heroicons/react/20/solid";

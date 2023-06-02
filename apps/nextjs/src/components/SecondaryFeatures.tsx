@@ -5,9 +5,9 @@ import clsx from "clsx";
 import { useInView } from "framer-motion";
 
 import { Container } from "~/components/Container";
-import screenshotContacts from "~/images/screenshots/photoOne.png";
-import screenshotProfitLoss from "~/images/screenshots/photoThree.png";
-import screenshotInventory from "~/images/screenshots/photoTwo.png";
+import screenshotContacts from "~/images/screenshots/Business_Home.png";
+import screenshotInventory from "~/images/screenshots/Movement_Bills.png";
+import screenshotProfitLoss from "~/images/screenshots/Stripe_Payments.png";
 
 const features: {
   name: string | JSX.Element;
@@ -16,6 +16,34 @@ const features: {
   image: StaticImageData;
   icon: () => JSX.Element;
 }[] = [
+  {
+    name: "Load Tracking",
+    summary:
+      "Never lose track of what your need to transport and make sure its billed.",
+    description:
+      "We have a full system of smart notifications to make sure you never miss a beat. We also have a full suite of reports to make sure you are getting paid for everything you haul.",
+    image: screenshotInventory,
+    icon: function InventoryIcon() {
+      return (
+        <>
+          <path
+            opacity=".5"
+            d="M8 17a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
+            fill="#fff"
+          />
+          <path
+            opacity=".3"
+            d="M8 24a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
+            fill="#fff"
+          />
+          <path
+            d="M8 10a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
+            fill="#fff"
+          />
+        </>
+      );
+    },
+  },
   {
     name: "Reporting",
     summary:
@@ -46,34 +74,6 @@ const features: {
             strokeWidth={2}
             strokeLinecap="round"
             strokeLinejoin="round"
-          />
-        </>
-      );
-    },
-  },
-  {
-    name: "Load Tracking",
-    summary:
-      "Never lose track of what your need to transport and make sure its billed.",
-    description:
-      "We have a full system of smart notifications to make sure you never miss a beat. We also have a full suite of reports to make sure you are getting paid for everything you haul.",
-    image: screenshotInventory,
-    icon: function InventoryIcon() {
-      return (
-        <>
-          <path
-            opacity=".5"
-            d="M8 17a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            opacity=".3"
-            d="M8 24a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            d="M8 10a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
           />
         </>
       );
@@ -237,12 +237,12 @@ function FeaturesDesktop({ isInView }: FeaturesProps) {
                   style={{ transform: `translateX(-${selectedIndex * 100}%)` }}
                   aria-hidden={featureIndex !== selectedIndex}
                 >
-                  <div className="w-[52.75rem] overflow-hidden rounded-xl">
+                  <div className="w-[70rem] overflow-hidden rounded-xl">
                     <Image
                       className="w-full"
                       src={feature.image}
                       alt=""
-                      sizes="52.75rem"
+                      sizes="70rem"
                       quality={100}
                     />
                   </div>
@@ -267,8 +267,39 @@ export function SecondaryFeatures() {
     <section
       id="secondary-features"
       aria-label="Features for simplifying everyday business tasks"
-      className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
+      className="relative pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
     >
+      <div ref={ref} className="absolute inset-0 -z-10 overflow-hidden">
+        <svg
+          className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern
+              id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+              width={200}
+              height={200}
+              x="50%"
+              y={-1}
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M100 200V.5M.5 .5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
+            <path
+              d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+              strokeWidth={0}
+            />
+          </svg>
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth={0}
+            fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+          />
+        </svg>
+      </div>
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display mt-8 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
@@ -285,6 +316,37 @@ export function SecondaryFeatures() {
         <FeaturesMobile isInView={isInView} />
         <FeaturesDesktop isInView={isInView} />
       </Container>
+      <div ref={ref} className="absolute inset-0 -z-10 overflow-hidden">
+        <svg
+          className="absolute bottom-0 left-[max(50%,25rem)] h-[64rem] w-[128rem] -translate-x-1/2 rotate-180 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern
+              id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+              width={200}
+              height={200}
+              x="50%"
+              y={-1}
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M100 200V.5M.5 .5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
+            <path
+              d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+              strokeWidth={0}
+            />
+          </svg>
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth={0}
+            fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+          />
+        </svg>
+      </div>
     </section>
   );
 }
